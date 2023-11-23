@@ -5,6 +5,10 @@ console.log("Documents of Object")
 let x = document
 console.log(x)
 
+// Print main HTML (Root) Element
+let y = document.documentElement
+console.log(y)
+
 // List all the tags
 x = document.all
 console.log(x)
@@ -36,6 +40,11 @@ console.log(document.body.lastElementChild)
 for (node of document.body.children) {
     console.log(node, typeof node)
 }
+
+// this all are in HTMLCollection Obj not Array
+// Convert it into ARRAY
+const ele = Array.from(document.body.children);
+console.log(ele);
 
 // Siblings Node
 const tag = document.body.children[1]
