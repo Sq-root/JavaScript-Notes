@@ -42,11 +42,9 @@
             background-color: #dddddd;
         }
     </style>
-
-
 </head>
 
-<body>
+<body id="body">
     <nav class="navbar">
         <li>Home</li>
         <li>Product</li>
@@ -97,20 +95,23 @@
             <td>4:5</td>
             <td>5:5</td>
         </tr>
-    </table>    
+    </table>
 
+    <h1 id="mainHeading">Hello</h1>
+
+    <!-- Method1: Event Binding  -->
+    <!-- <button id="mainBtn" onclick="raiseAlert()">Click Me</button> -->
+
+    <!-- Method2: Event Binding with JS -->
+    <button id="mainBtn">Click Me</button>
+    <button id="loginBtn">Login</button>
 
     <!-- <script>
         //Make first/ast element of NAVBAR red
         let navTag = document.getElementsByClassName("navbar")
         console.log(navTag[0].firstElementChild.style="background-color:red")
         console.log(navTag[0].lastElementChild.style="background-color:green")
-        
         let listTag = document.getElementsByClassName("ul_tags")
-        
-
-
-
     </script> -->
     <script src="./js_9_DOM.js"></script>
 

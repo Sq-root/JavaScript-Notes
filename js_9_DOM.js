@@ -127,17 +127,24 @@ console.log(ulID.getAttribute("status")); // get data of the attributes
 
 console.log(ulID.removeAttribute("status")); // Remove attributes
 
-console.log(ulID.attributes); // get all attributes of any Element(Tag)
+console.log(ulID.attributes); // Get all attributes of any Element(Tag)
 
 //-------------Create and Add New Node Element in DOM
 const newDiv = document.createElement("div"); // give tag u want to create
 // it will add new NodeElement in DOM
 
 const newHeading = document.createElement("h2"); // give tag u want to create
-body.append(newHeading); // it will add new NodeElement in DOM
+/*  body.append = New Element add after it.  
+    body.after = New Element add after it. 
+    body.prepend = New Element add before it.  
+    body.before = New Element add before it.  
+      */
+// body.append(newHeading); // it will add new NodeElement Next to its postion in DOM
 //Append text child element
 const text = document.createTextNode("Hello Guys!");
 newHeading.appendChild(text);
+//--------------------- or ---------------------
+newHeading.textContent = "Namaste World !"; //Append text child element
 
 //Replace node element
 mainHeading.replaceWith(newHeading);
@@ -152,5 +159,23 @@ listDiv.innerHTML = `<table>
                             <td>4:1</td>
                             <td>5:1</td>
                         </tr>
-                      </tabel>`;
+                      </tabel>`; //Is used to Create entire Element
 body.append(listDiv);
+
+//----------------------------Event Binding----------------------------
+// -- 1.On one event we can perfrom multiple action E.g. Fun.
+function raiseAlert() {
+  alert("Hi....");
+}
+
+// Method2: Event Binding with JS (Best Practice)
+mainBtn.onClick = raiseAlert; 
+
+// Method3: Event Binding with JS
+let loginbtn = document.querySelector("#loginbtn");
+console.log(loginbtn);
+loginbtn.addEventListener("click", loggedIn);
+
+function loggedIn() {
+  alert("Successfully Login..");
+}
