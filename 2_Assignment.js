@@ -6,8 +6,7 @@ function addChapter(event) {
     course_list.children[0].remove();
   }
 
-  let inputvalue = inputFiled.value;
-  console.log(inputvalue);
+  let inputvalue = inputFiled.value;  //take form Value
   //Create New li
   let listEle = document.createElement("li");
   listEle.className = "list-group-item d-flex justify-content-between";
@@ -57,7 +56,4 @@ function editCourse(currentElement) {
       currentElement.previousElementSibling
     );
   }
-  // currentElement.parentElement.appendChild(editFiled);
-  // title.remove();
-  console.log(title);
 }

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 Assignment</title>
+    <!-- --Font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- icon  -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- //CSS  -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .main {
+            height: 100vh;
+            display: flex;
+            background-color: cornflowerblue;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #card {
+            position: relative;
+            height: 400px;
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        #card h2 {
+            font-size: 30px;
+            margin: 10px 0;
+            font-weight: 800;
+        }
+
+        #card h5 {
+            font-size: 25px;
+            color: red;
+            margin: 20px 0;
+        }
+
+        #card button {
+            background-color: cadetblue;
+            color: #fff;
+            font-weight: 700;
+            border-radius: 7px;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* #card #remove-btn{
+            background-color: #dadada;
+            color: black;
+            margin-right: 10px;
+        } */
+
+        img {
+            width: 100%;
+            height: 50%;
+            object-position: center;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        #card i {
+            position: absolute;
+            font-size: 50px;
+            color: red;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            opacity: 0.7;
+            transition: all 0.5s ease-in;
+            
+        }
+
+        /* // cursor */
+        #cursor {
+            z-index: 1000;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: black;
+            position: absolute;
+            opacity: 0.5;
+            /* top: 10px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div id="cursor">
+
+        </div>
+        <div id="card">
+            <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?q=80&w=1899&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="">
+            <h2>Devrich Conway</h2>
+            <h5>Stranger</h5>
+            <div id="btn-container">
+                <!-- <button id="remove-btn">
+                Remove
+            </button> -->
+                <button id="add-frd-btn">
+                    Add Friend
+                </button>
+            </div>
+            <i class="ri-heart-fill" id="likeicon"></i>
+        </div>
+    </div>
+
+    <!-- jS  -->
+    <script src="./3_Assignment.js"></script>
+</body>
+
+</html>
