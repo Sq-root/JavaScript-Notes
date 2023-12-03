@@ -48,3 +48,22 @@ function changeCursor(event) {
   cursorEle.style.top = event.y + "px";
 }
 mainScreen.addEventListener("mousemove", changeCursor);
+
+//Ques 4 --
+let elem1 = document.querySelector("#elem1");
+let elemImg = document.querySelector("#elem1 img");
+
+function changeTextBg(event) {
+  elemImg.style.left = event.x + "px";
+  elemImg.style.top = event.y + "px";
+}
+
+function changeOpactiy(event) {
+  elemImg.style.opacity = 1;
+}
+function hideOpactiy(event) {
+  elemImg.style.opacity = 0;
+}
+elem1.addEventListener("mousemove", changeTextBg);
+elem1.addEventListener("mouseenter", changeOpactiy);
+elem1.addEventListener("mouseleave", hideOpactiy);
