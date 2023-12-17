@@ -21,11 +21,11 @@ console.log(x);
 // Childern Node
 // It also included TEXT node and comment node
 // Text Node :- Indentation will count as a text code
-console.log(document.body.childNodes);
+console.log("All Child Node: ", document.body.childNodes);
 
 // Childern Node
 // Gives list of Only child nodes
-console.log(document.body.children);
+console.log("Only Element Child Node: ", document.body.children);
 
 // Only First Child
 console.log(document.body.firstElementChild);
@@ -48,15 +48,21 @@ console.log(ele);
 const tag = document.body.children[1];
 // Take particulat node
 // Next Sibling
-console.log(tag.nextElementSibling);
+console.log("nextElementSibling", tag.nextElementSibling);
 // Previous Siblings
-console.log(tag.previousElementSibling);
+console.log("previousElementSibling", tag.previousElementSibling);
 
 // E.g Take Child and Sibling Element Node
-const ulTag = document.body.children[1];
+let ulTag = document.body.children[1];
 firstChild = ulTag.children[0];
 sibli = firstChild.nextElementSibling;
 console.log(sibli);
+
+//Parent ELement 
+parent = ulTag.parentElement  // It give Parent Element Only lese nUll
+console.log("UL Tag Parent Ele", parent);
+parent = ulTag.parentNode     // It give Parent Node (Text, Comment, Ele)
+console.log("UL Tag Parent Node Element: ", parent);
 
 // -------------------Table DOM Manipulation-----------------------
 const tableTag = document.body.children[2];
@@ -88,7 +94,7 @@ console.log(
 );
 
 // ---------Get element by ID---------
-// Live Element Selector work at run time
+// Live Element Selector work at run time always give Collection of ele
 // When we give ID to any tags it become global element in document obj.
 console.log((ulID.style = "background-color:green"));
 console.log(ulID);
@@ -169,7 +175,7 @@ function raiseAlert() {
 }
 
 // Method2: Event Binding with JS (Best Practice)
-mainBtn.onClick = raiseAlert; 
+mainBtn.onClick = raiseAlert;
 
 // Method3: Event Binding with JS
 let loginbtn = document.querySelector("#loginbtn");
