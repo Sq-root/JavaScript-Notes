@@ -6,7 +6,7 @@
 //   this all task takes so handle this all taks we user promises.
 
 //Create Promises
-let promo1 = new Promise((resolve, reject) => {
+let promo1 = new  se((resolve, reject) => {
   // Do any ASYNC Task
   // DB Calls, Network Call, File Fetch
   let num = Math.random();
