@@ -2,8 +2,7 @@
 // - It use to handle PROMISES.
 // 1. ASYNC Fun =
 // -  It always return a promise.
-// - No matter which value we will return such int, float, boolen it
-//   wrap it this of promise and send it.
+// - No matter which value we will return such int, float, boolen it wrap it this of promise and send it.
 
 //E.g. ASYNC Fun Always Gives the Promises (Wrapping value inside it).
 async function getData() {
@@ -57,25 +56,23 @@ handlePromo();
 
 // 2. ------------BY ASYNC/AWAIT---------------
 // -- AWAIT will wait it won't got to next line of code until promis will resolve.
+// Here the Function won't be there in call stack it will suspended it won't be block main thread the promisse call resolve separately.Once prmisse resolved it excutes futher logic comes to memory stack.
 async function apidata() {
   // JS Engine will waiting for promises to be resolved/rejected.
   let res = await promisAPI;
-  // THis will not execute until await promise will resolve.    
+  // THis will not execute until await promise will resolve.
   console.log("Handled Promiess", res);
   console.log("Waiting to Resolve Promiese");
 
-  //Call Multiple Times
+  //Call Multiple Times (Both Works Parallel)
   let res1 = await promisAPI;
-  // THis will not execute until await promise will res1olve.    
+  // THis will not execute until await promise will res1olve.
   console.log("Handled Promiess", res1);
   console.log("Waiting to Resolve Promiese");
-
-  
 }
 
 apidata();
 //********************************************************** */
-
 
 async function getWeatherUpdate() {
   let mumbaiWeather = new Promise((resolve, reject) => {
