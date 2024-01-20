@@ -36,7 +36,7 @@ fetchdata();
 //********************************************************** */
 //E.g Nomal Way to Handle Promises vs ASYNC/AWAIT handle Promises
 // 1. ------------ Normal Ways---------------
-// -- Here it will execute the code no matter what promise resolve or not.It won't wait promise to be resolve.
+// -- Here it will execute futher code promis handl no matter what promise resolve or not.It won't wait promise to be resolve.
 const promisAPI = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve("Fecthed Data Done....");
@@ -48,7 +48,7 @@ function handlePromo() {
   promisAPI.then((res) => {
     console.log("Handled Promiess", res);
   });
-  //This will excute and in the background promis will do their job.
+  //This will excute before Promis Resolve and in the background promis will do their job.(Code Won't Stop it excute no matter promis resolve or not)
   console.log("Waiting to Resolve Promiese");
 }
 
