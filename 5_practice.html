@@ -1,100 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM Search</title>
     <style>
-        * {
-            margin: 0px;
-            padding: 0px;
-        }
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
 
-        nav {
-            display: flex;
-            background-color: blue;
+      nav {
+        display: flex;
+        background-color: blue;
+      }
 
+      nav li {
+        list-style: none;
+        padding: 0 20px;
+      }
 
-        }
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 50%;
+        margin-top: 2rem;
+      }
 
-        nav li {
-            list-style: none;
-            padding: 0 20px;
-        }
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
 
-        table {
-            font-family: arial, sans-serif;
-            border-collapse: collapse;
-            width: 50%;
-            margin-top: 2rem;
-        }
-
-        td,
-        th {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #dddddd;
-        }
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
     </style>
-</head>
+  </head>
 
-<body id="body">
+  <body id="body">
     <nav class="navbar">
-        <li>Home</li>
-        <li>Product</li>
-        <li>Carrer</li>
-        <li>Contact us</li>
+      <li>Home</li>
+      <li>Product</li>
+      <li>Carrer</li>
+      <li>Contact us</li>
     </nav>
 
     <ul class="ul_tag" id="ulID">
-        <li>Red</li>
-        <li>Green</li>
-        <li>Blue</li>
-        <li>Yellow us</li>
+      <li>Red</li>
+      <li>Green</li>
+      <li>Blue</li>
+      <li>Yellow us</li>
     </ul>
 
     <table>
-        <tr>
-            <td>1:1</td>
-            <td>2:1</td>
-            <td>3:1</td>
-            <td>4:1</td>
-            <td>5:1</td>
-        </tr>
-        <tr>
-            <td>1:2</td>
-            <td>2:2</td>
-            <td>3:2</td>
-            <td>4:2</td>
-            <td>5:2</td>
-        </tr>
-        <tr>
-            <td>1:3</td>
-            <td>2:3</td>
-            <td>3:3</td>
-            <td>4:3</td>
-            <td>5:3</td>
-        </tr>
-        <tr>
-            <td>1:4</td>
-            <td>2:4</td>
-            <td>3:4</td>
-            <td>4:4</td>
-            <td>5:4</td>
-        </tr>
-        <tr>
-            <td>1:5</td>
-            <td>2:5</td>
-            <td>3:5</td>
-            <td>4:5</td>
-            <td>5:5</td>
-        </tr>
+      <tr>
+        <td>1:1</td>
+        <td>2:1</td>
+        <td>3:1</td>
+        <td>4:1</td>
+        <td>5:1</td>
+      </tr>
+      <tr>
+        <td>1:2</td>
+        <td>2:2</td>
+        <td>3:2</td>
+        <td>4:2</td>
+        <td>5:2</td>
+      </tr>
+      <tr>
+        <td>1:3</td>
+        <td>2:3</td>
+        <td>3:3</td>
+        <td>4:3</td>
+        <td>5:3</td>
+      </tr>
+      <tr>
+        <td>1:4</td>
+        <td>2:4</td>
+        <td>3:4</td>
+        <td>4:4</td>
+        <td>5:4</td>
+      </tr>
+      <tr>
+        <td>1:5</td>
+        <td>2:5</td>
+        <td>3:5</td>
+        <td>4:5</td>
+        <td>5:5</td>
+      </tr>
     </table>
 
     <h1 id="mainHeading">Hello</h1>
@@ -113,8 +110,6 @@
         console.log(navTag[0].lastElementChild.style="background-color:green")
         let listTag = document.getElementsByClassName("ul_tags")
     </script> -->
-    <script src="./js_13_asyncawait.js"></script>
-
-</body>
-
-</html> 
+    <script src="./7_practice.js"></script>
+  </body>
+</html>
