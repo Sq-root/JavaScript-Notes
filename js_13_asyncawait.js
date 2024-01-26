@@ -36,7 +36,7 @@ fetchdata();
 //********************************************************** */
 //E.g Nomal Way to Handle Promises vs ASYNC/AWAIT handle Promises
 // 1. ------------ Normal Ways---------------
-// -- Here it will execute futher code promis handl no matter what promise resolve or not.It won't wait promise to be resolve.
+// -- It will go to next line of code don't wait promis will resolve.It won't wait promise to be resolve.
 const promisAPI = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve("Fecthed Data Done....");
@@ -55,7 +55,7 @@ function handlePromo() {
 handlePromo();
 
 // 2. ------------BY ASYNC/AWAIT---------------
-// -- AWAIT will wait it won't got to next line of code until promis will resolve.
+// -- AWAIT will wait it won't go to next line of code until promis will resolve.
 // Here the Function won't be there in call stack it will suspended it won't be block main thread the promisse call resolve separately.Once prmisse resolved it excutes futher logic comes to memory stack.
 async function apidata() {
   // JS Engine will waiting for promises to be resolved/rejected.
@@ -99,3 +99,43 @@ async function getWeatherUpdate() {
 getWeatherUpdate().then((value) => {
   console.log("Weather: ", value);
 });
+
+//*************************API Call******************************/
+//Simple APi Cal
+async function fetchData() {
+  const data = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  const result = await data.json(); //Json it covert into JSON obj retun as promises
+
+  console.log("Response: ", result);
+}
+
+fetchData();
+
+//Catch Error
+async function fetchData1() {
+  try {
+    const data = await fetch("https://jssonplaceholder.typicode.com/todos/1");
+    const result = await data.json(); //Json it covert into JSON obj retun as promises
+    console.log("Response: ", result);
+  } catch (err) {
+    // Handle Error
+    console.log("Errror: ", err);
+  }
+}
+
+fetchData1();
+
+//Try Catch Finally
+// Finally: It will excute the code no mamtter error occur or not .
+//          It will also excute if try bloc return somthing
+//          It used for clean purpose e.g. close file, close connection etc.
+const x = () => {
+  try {
+    console.log("Start Program...");
+    console.log(x);
+  } catch (err) {
+    console.log(err);
+  } finally {
+    console.log("No matter What I will execute my code");
+  }
+};
