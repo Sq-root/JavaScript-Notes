@@ -76,3 +76,23 @@ const positive = (ele) => {
 };
 
 console.log(arr.forEach(positive));
+
+function getData(id, callbackFun) {
+  setTimeout(() => {
+    console.log("APi DATA: ", id);
+    if (callbackFun) {
+      callbackFun();
+    }
+  }, 2000);
+}
+
+//Creting Callback Pyaamid
+getData(12, (data) => {
+  getData(13, (data) => {
+    getData(14, (data) => {
+      getData(15, (data) => {
+        getData(16, (data) => { })
+      })
+    })
+  })
+});
