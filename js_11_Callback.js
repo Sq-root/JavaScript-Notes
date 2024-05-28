@@ -7,6 +7,10 @@
 // All the operation work in Parallel manner independant to each other.
 // E.g. setTimeOut, SetTimeInterval.
 
+// A callback is a function passed as an argument to another function
+// This technique allows a function to call another function
+// A callback function can run after another function has finished
+
 //Normal FUnction
 // function loadScript(src) {
 // let script = document.createElement("script");
