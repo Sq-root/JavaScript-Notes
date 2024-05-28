@@ -86,6 +86,10 @@ function getData(id, callbackFun) {
   }, 2000);
 }
 
+//Note: U can;t pass function direxctly like this. you have to pass as arrow func like below
+getData(123,getData(124));
+
+
 //Creting Callback Pyaamid
 getData(12, (data) => {
   getData(13, (data) => {
