@@ -4,6 +4,7 @@
 //   2. Make connection to DB.
 //   3. Download data , pics, videos from Server.
 //   this all task takes so handle this all taks we user promises.
+//   4. Avoid Callback Hell Problem 
 
 //Create Promises
 let promo1 = new promis((resolve, reject) => {
