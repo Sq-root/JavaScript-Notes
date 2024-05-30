@@ -10,31 +10,59 @@
 //   this all task takes so handle this all taks we user promises.
 //   4. Avoid Callback Hell Problem 
 
-//Create Promises
-let promo1 = new promis((resolve, reject) => {
-  // Do any ASYNC Task
-  // DB Calls, Network Call, File Fetch
-  let num = Math.random();
-  if (num < 0.5) {
-    reject("Something Went Wrong !");
-  } else {
-    setTimeout(() => {
-      console.log("Yes I am Done");
-      resolve("Let's Go..");
-    }, 3000);
-  }
-});
+// ### Scenario: Ordering Food Online
+// ---------------------------------------------
+// **Placing the Order:**
+// - You order a pizza online.
+// - The restaurant starts preparing your order.
 
-//Once work is done this will execute
-promo1
-  //Only for once resolve
-  .then((result) => {
-    console.log(result);
-  })
-  //Only for once reject
-  .catch((error) => {
-    console.log("Error: ", error);
+// **Waiting for the Order:**
+// - You go about your day (e.g., watch TV) while the pizza is being made.
+
+// **Order Completion:**
+// - The restaurant notifies you when the pizza is ready and delivers it.
+// - If successful, you enjoy your pizza.
+// - If there's a problem (e.g., out of ingredients, delivery issue), you get notified.
+
+// ### How Promises Relate to This Scenario
+
+// **Promise Creation (Placing the Order):**
+// - Placing the order is like creating a promise, expecting your pizza in the future.
+
+// **Pending State (Waiting for the Order):**
+// - While the pizza is being prepared, the promise is "pending." You do other things in the meantime.
+
+// **Resolved or Rejected State (Order Completion):**
+// - When the pizza arrives, the promise is "resolved" with a successful delivery.
+// - If there's an issue, the promise is "rejected" with an error message.
+
+// Function that returns a promise
+function fetchData() {
+  return new Promise((resolve, reject) => {
+    // Simulate an asynchronous operation using setTimeout
+    setTimeout(() => {
+      const data = "Hello, World!";
+      const success = true; // Simulate a successful operation
+
+      if (success) {
+        resolve(data); // Resolve the promise with the data
+      } else {
+        reject("Failed to fetch data"); // Reject the promise with an error message
+      }
+    }, 2000); // Wait for 2 seconds
   });
+}
+
+// Using the promise
+fetchData()
+  .then((data) => {
+    console.log("Data received:", data); // Handle the resolved value
+  })
+  .catch((error) => {
+    console.error("Error:", error); // Handle any errors
+  });
+
+console.log("Fetching data..."); // This will log first due to the asynchronous nature of the promise
 
 //E.g. Pass data
 let promo2 = new Promise((resolve, reject) => {
