@@ -159,3 +159,28 @@ multiplePromo.then((num) => {
   //Call API logic
   console.log("API Callin");
 });
+
+
+//E.g Promis Chain -- one by one data will come
+function fetchUserDetails(userid) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("Fetching User Details");
+      resolve({ userId: userid });
+      // reject();
+    }, 2000);
+  });
+}
+
+fetchUserDetails(1)
+  .then((id) => {
+    console.log("User Found: ", id);
+    return fetchUserDetails(2);
+  })
+  .then((id) => {
+    console.log("User Found: ", id);
+    return fetchUserDetails(3);
+  })
+  .then((id) => {
+    console.log("User Found: ", id);
+  });
