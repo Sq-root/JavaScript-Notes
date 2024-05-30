@@ -1,5 +1,9 @@
 // ----------------------Promises--------------------
+// Promise is an action which guarantees a result in future, the result could be the expected one(positive) 
+// and if anything goes wrong, the result will be something which was not anticipated(negative)
+
 // Why do we Need Promiss:
+// -------------------------------
 //   1.Get data From API.
 //   2. Make connection to DB.
 //   3. Download data , pics, videos from Server.
