@@ -106,34 +106,6 @@ promis
     console.log("Second Task: ", value);
   });
 
-//E.g Load Script Example
-let link = "https://www.youtube.com/iframe_api";
-
-const loadScript = (src) => {
-  return new Promise((resolve, reject) => {
-    // pass data as Promise
-    let script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = src;
-    document.body.appendChild(script);
-    script.onload = () => {
-      resolve("Fetch data Successfully !");
-    };
-    script.onerror = () => {
-      reject("Error..");
-    };
-  });
-};
-
-let data = loadScript(link);
-data
-  .then((value) => {
-    console.log("Msg: ", value);
-  })
-  .catch((error) => {
-    console.log("Error: ", error);
-  });
-
 //E.g. Attache MUltiple Handlers to one Promis
 //Create Promises
 let multiplePromo = new Promise((resolve, reject) => {
@@ -183,4 +155,32 @@ fetchUserDetails(1)
   })
   .then((id) => {
     console.log("User Found: ", id);
+  });
+
+//E.g Load Script Example
+let link = "https://www.youtube.com/iframe_api";
+
+const loadScript = (src) => {
+  return new Promise((resolve, reject) => {
+    // pass data as Promise
+    let script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = src;
+    document.body.appendChild(script);
+    script.onload = () => {
+      resolve("Fetch data Successfully !");
+    };
+    script.onerror = () => {
+      reject("Error..");
+    };
+  });
+};
+
+let data = loadScript(link);
+data
+  .then((value) => {
+    console.log("Msg: ", value);
+  })
+  .catch((error) => {
+    console.log("Error: ", error);
   });
