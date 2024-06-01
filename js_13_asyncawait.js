@@ -60,6 +60,8 @@ handlePromo();
 async function apidata() {
   // JS Engine will waiting for promises to be resolved/rejected.
   let res = await promisAPI;
+  // await: The await keyword is used exclusively within async functions. It tells JavaScript to "pause" the execution of the  
+  // function at this point, and wait for the Promises function to complete.
   // THis will not execute until await promise will resolve.
   console.log("Handled Promiess", res);
   console.log("Waiting to Resolve Promiese");
