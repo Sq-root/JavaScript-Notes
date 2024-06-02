@@ -1,5 +1,8 @@
 // ----------------------ASYNC/AWAIT--------------------
+// - ASYNC/AWAIT are used to handle asynchronous operations in JavaScript. They make it easier to work with promises by allowing you 
+//   to write asynchronous code that looks more like synchronous code, which can be easier to read and understand.
 // - It use to handle PROMISES.
+
 // 1. ASYNC Fun =
 // -  It always return a promise.
 // - No matter which value we will return such int, float, boolen it wrap it this of promise and send it.
@@ -105,7 +108,9 @@ getWeatherUpdate().then((value) => {
 //*************************API Call******************************/
 //Simple APi Cal
 async function fetchData() {
-  const data = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  //Here Fetch will return the RESPONSE BODY.
+  //Response body which is as ReableStream which needs to convert to JSON.
+  const data = await fetch("https://jsonplaceholder.typicode.com/todos/1"); 
   const result = await data.json(); //Json it covert into JSON obj retun as promises
 
   console.log("Response: ", result);
