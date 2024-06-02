@@ -133,6 +133,36 @@ async function fetchData1() {
 
 fetchData1();
 
+//E.g POST API Call
+let URL = "https://jsonplaceholder.typicode.com/posts";
+async function createNewPost(postdata) {
+  try {
+    const response = await fetch(URL, {
+      method: "POST",
+      body: JSON.stringify(postdata),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    });
+    const data = await response.json();
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+async function createPost() {
+  let postdata = {
+    title: "Rest Time",
+    body: "Cricket",
+    userId: 12,
+  };
+
+  let res = await createNewPost(postdata);
+  console.log("Response: ", res);
+}
+
+
 //Try Catch Finally
 // Finally: It will excute the code no mamtter error occur or not .
 //          It will also excute if try bloc return somthing
@@ -147,3 +177,5 @@ const x = () => {
     console.log("No matter What I will execute my code");
   }
 };
+
+
