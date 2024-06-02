@@ -111,8 +111,9 @@ async function fetchData() {
   //Here Fetch will return the RESPONSE BODY.
   //Response body which is as ReableStream which needs to convert to JSON.
   const data = await fetch("https://jsonplaceholder.typicode.com/todos/1"); 
-  const result = await data.json(); //Json it covert into JSON obj retun as promises
-
+  // The .json() method of the response object is used to parse the JSON body content. 
+  // This method also returns a promise.
+  const result = await data.json(); 
   console.log("Response: ", result);
 }
 
