@@ -13,7 +13,7 @@ console.log("----------------Variables--------------");
 //Declare and initalize
 // var name = "gaurav";
 
-//Note: We can declare a Varaible without using any of the keywords by de
+//Note: We can declare a Variables without using any of the keywords by de
 // E.g x = 200 // BY default it is GLOBAL Scope
 
 // ------------------Using Var keyword------------------
