@@ -20,9 +20,10 @@ console.log("----------------Variables--------------");
 // (Suggestion that not to use VAR keywords because it stored inside Window Object bcuz of GLOBAL Scope)
 
 /*1. VAR declared is global scoped. 
-   - It has global scope means We Change this VAR variable anywhere.
+   - It has global scope means We Change this VAR variable anywhere & it stay until we change.
      i.e.inside block ,func ,loop we can change its value .
-   - We can update the data of the Variable and also we can redeclare again with same name*/
+   - We can update the data of the Variable and also we can redeclare again with same name
+   (When you redeclare a var variable, it doesn’t create a new variable, but rather, reassigns the existing one.) */
 /*console.log("-------VAR Key Variables-------");
 
     var y = 200;
@@ -38,8 +39,7 @@ console.log("----------------Variables--------------");
     }
     console.log("Changes due to inside Block:", res); */
 
-// // Redeclaration with in Scope (Means Suppose we declare as INT we can redeclare
-// //  this as STRING again).
+// Redeclaration : It with in Scope (Means Suppose we declare as INT we can redeclare  this as STRING again).
 // var xx =40
 // // Here x will be over ride to '50'
 // var xx='50'
@@ -56,7 +56,7 @@ console.log("----------------Variables--------------");
 // console.log("Outside Block: ", a, x);
 
 // function doWork() {
-//   var var1 = "xxxxx"
+//   var x = "xxxxx"
 //   console.log("Inside Fun: ", a, x);
 // }
 
@@ -69,10 +69,10 @@ console.log("----------------Variables--------------");
   - We can update the data of the Variable but Redeclaration not allowed within block.
   - Once the LET var declare we can't redeclare again with same name we can update only. */
 
-/*let abc = 30;
-    console.log(abc);
-    abc = 300;
-    console.log(abc); */
+// let abc = 30;
+// console.log(abc);
+// abc = 300;
+// console.log(abc);
 
 /* 2. It has local scope means Whatever changes made inside the BLOCK it will remain till 
       the scope block Due to Let variable become local inside the block   */
@@ -93,31 +93,31 @@ console.log("----------------Variables--------------");
 // Re declaratio not allowed.
 
 // E.g. Multilevel Scope value update
-let a = 10;
-if (a > 5) {
-  let x = "Gaurav"; //Declared inside block
-  console.log("a > 5 :", x);
-  {
-    x = 1234; // Value Update
-    console.log("Inside New Block :", x);
-  }
-  console.log("Outside Block :", x); //get new updated value
-}
-
-// E.g. Multilevel Scope (Redeclared)
-// let ab = 10;
-// if (ab > 5) {
+// let a = 10;
+// if (a > 5) {
 //   let x = "Gaurav"; //Declared inside block
-//   console.log("ab > 5 :", x);
+//   console.log("a > 5 :", x);
 //   {
-//     let x = 1234; // Redeclared here it create new var.
+//     x = 1234; // Value Update
 //     console.log("Inside New Block :", x);
 //   }
 //   console.log("Outside Block :", x); //get new updated value
 // }
 
+// E.g. Multilevel Scope (Redeclared)
+let ab = 10;
+if (ab > 5) {
+  let x = "Gaurav"; //Declared inside block
+  console.log("ab > 5 :", x);
+  {
+    let x = 1234; // Redeclared here it create new var.
+    console.log("Inside New Block :", x);
+  }
+  console.log("Outside Block :", x); //get new updated value
+}
+
 // ------------------Using const keyword------------------
-// 1. Once the value assing to Var after that we can't change. (Means Redeclaration and update not        allowed)
+// 1. Once the value assing to Var after that we can't change. (Means Redeclaration and update not allowed)
 // const z =10
 // console.log(z);
 // will thrown error won't change
