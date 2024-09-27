@@ -1,7 +1,7 @@
 // ----------------Variables--------------
 console.log("----------------Variables--------------");
 
-//Declare Var  (Means create var with default value)
+// Declare Var  (Means create var with default value)
 // Keywords are used VAR, LET ,CONST
 // var x;
 // var x, y;
@@ -46,7 +46,7 @@ console.log("----------------Variables--------------");
 // console.log(xx)
 
 // Ex. VAR with block Level
-// Here x var is not destroy it is decaled in IF block but still available of entire block.
+// Here a var is not destroy it is decaled in IF block but still available of entire block.
 // var a = 10;
 // if (a > 5) {
 //   var x = "Gaurav"; // Declared inside block
@@ -55,6 +55,7 @@ console.log("----------------Variables--------------");
 
 // console.log("Outside Block: ", a, x);
 
+// its declare in fun so it will destory
 // function doWork() {
 //   var x = "xxxxx"
 //   console.log("Inside Fun: ", a, x);
