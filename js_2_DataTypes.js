@@ -64,3 +64,49 @@ job = "Engineer";
 
 console.log(person); // Output: { name: 'Alex' }
 console.log(job); // Output: Engineer
+
+// --------------------- Null & Undefined-----------------------------------
+// 1. Undefined
+/* Key Points about undefined:
+    Default state: When a variable is declared but not assigned a value, it is automatically undefined.
+    Non-existent properties: Accessing a property that doesn't exist on an object returns undefined.
+    Unspecified function arguments: When a function is called without passing certain arguments,
+    those parameters become undefined.
+    Return value: A function that doesn’t explicitly return anything returns undefined. */
+
+// 1. Uninitialized variable:
+let x1;
+console.log(x1); // Output: undefined
+
+/// 2. Missing object property:
+let pson = { name: "Alice" };
+console.log(person.age); // Output: undefined
+
+// 3.Unpassed function parameter:
+function greet(name) {
+  console.log("Hello, " + name);
+}
+greet(); // Output: Hello, undefined
+
+// 4. Function without return statement:
+function doNothing() {
+  // no return statement
+}
+console.log(doNothing()); // Output: undefined
+
+//2. Null
+/* null represents intentional absence of any object value.
+ It is an assignment value that a developer uses to explicitly indicate "no value" or "empty." */
+
+/* Key Points about null: 
+    1. Explicit assignment: It is assigned by a developer to indicate that a variable should intentionally have "no value."
+    2. Clearing objects: When a variable is expected to hold an object and you want to explicitly remove its value, you assign null. */
+
+// 1.Intentional absence of value:
+let data = null;
+console.log(data); // Output: null
+
+// 2.Clearing an object reference:
+let user = { name: "Bob" };
+user = null; // Explicitly setting the object reference to null
+console.log(user); // Output: null
