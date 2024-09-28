@@ -136,3 +136,41 @@ if (ab > 5) {
 // it is not possible
 //4. Only var declaration not allowed in CONST we must provide the value.
 // const var2;
+
+//  --------------------Array & OBj using Const----------------
+// Mutable: The value can be changed after it's created.
+// Immutable: The value cannot be changed after it's created.
+
+// 1. const with Arrays
+// When you declare an array using const, you cannot reassign the array itself to a
+// different array or value, but you can modify the contents of the
+//  array (e.g., add, remove, or change elements).
+
+const arr = [1, 2, 3]; // Declare an array with const
+
+// You can modify the contents of the array
+arr.push(4); // Adds 4 to the array
+console.log(arr); // Output: [1, 2, 3, 4]
+
+// You can change individual elements
+arr[0] = 10;
+console.log(arr); // Output: [10, 2, 3, 4]
+
+// But you cannot reassign the array (Entire New Array )
+arr = [5, 6, 7]; // This will throw an error: TypeError
+
+// -------------------------------------------------------------
+// 2. const with Object
+
+const obj = { name: "Alice", age: 25 }; // Declare an object with const
+
+// You can modify the properties of the object
+obj.age = 26;
+console.log(obj); // Output: { name: "Alice", age: 26 }
+
+// You can add new properties
+obj.city = "New York";
+console.log(obj); // Output: { name: "Alice", age: 26, city: "New York" }
+
+// But you cannot reassign the object
+obj = { name: "Bob", age: 30 }; // This will throw an error: TypeError
