@@ -39,7 +39,9 @@ let sym2 = Symbol("id1");
 
 console.log(sym1 === sym2); // Output: false (they are different symbols)
 
-for (let key in user) {
+const usr = {};
+
+for (let key in usr) {
   console.log(key); // Output: name, age (ssn and employeeId won't show up)
 }
 

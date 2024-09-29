@@ -21,6 +21,7 @@ let data = `account is 'z14xx'`;
 console.log(data);
 
 //Strings Methonds
+// Extracts a part of the string between two indices (end index not included).
 console.log(name.slice(2, 5)); // (start,end)  end is Exclusive
 
 //Get strng Char one by one
@@ -40,3 +41,16 @@ for (let i = 0; i < name.length; i++) {
 console.log('Gaurav"'.length);
 
 document.body.h1 = "Gaurav";
+
+//indexOf(substring) : Returns the index of the first occurrence of the specified substring.
+let str = "JavaScript";
+console.log(str.indexOf("Script")); // Output: 4
+
+// Creation: String(), template literals.
+// Basic operations: charAt(), concat(), includes(), startsWith(), endsWith().
+// Case conversion: toUpperCase(), toLowerCase().
+// Substring extraction: slice(), substring(), substr().
+// Replacement: replace(), replaceAll().
+// Trimming: trim(), trimStart(), trimEnd().
+// Splitting and joining: split(), join().
+// Searching: indexOf(), search(), match().
