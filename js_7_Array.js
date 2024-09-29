@@ -1,4 +1,4 @@
-let arr = [1, 2, 3n, "4", true, 6.7];   //Hold any datatypes
+let arr = [1, 2, 3n, "4", true, 6.7]; //Hold any datatypes
 console.log(arr);
 
 console.log(arr[1]);
@@ -10,7 +10,7 @@ console.log(arr[100]);
 let x = arr[100];
 console.log(x);
 
-//Once arr is declsred we can add the new data
+//Once arr is declared we can add the new data
 arr[6] = 100;
 console.log(arr);
 
@@ -20,7 +20,8 @@ console.log(arr);
 console.log(arr.length); //len will be 61
 
 for (let i in arr) {
-  console.log(i);
+  //return index
+  console.log(arr[i]);
 }
 
 // It will only print those have value and other postion it will print undefined.
@@ -61,7 +62,6 @@ let compare = (a, b) => {
 console.log(list.sort(compare));
 
 //Loop Over Arr
-
 for (let j = 0; j < list.length; j++) {
   console.log(list[j]);
 }
