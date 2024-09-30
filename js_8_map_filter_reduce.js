@@ -71,10 +71,27 @@ console.log(data2);
 console.log(arr1.filter((x) => x > 30));
 
 // ---------------------Reduce-----------------
-// -- It is used to sum of all elements.
+// -- It is used to sum of all elements. (All input into One Output).
 // Reduce is used when we want to reduce the array to single value eg (max, min, avg, sum, difference etc).
 // Reduce passes two arguments one function(which includes accumulator and initial value as argument itself)
 // and another initial value of accumulator.
+
+const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// Traditional Approch
+let sum = 0;
+for (let i = 0; i < list.length; i++) {
+  sum += list[i]; // Many input into one Output
+}
+
+console.log("Sum : ", sum);
+
+//Method 1
+const summInput = list.reduce(function sum(acc, curr) {
+    acc += curr;
+    return acc;
+}, 0);
+console.log("Sum : ", summInput);
 
 // Question
 
