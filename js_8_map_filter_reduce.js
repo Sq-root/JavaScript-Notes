@@ -88,8 +88,8 @@ console.log("Sum : ", sum);
 
 //Method 1
 const summInput = list.reduce(function sum(acc, curr) {
-    acc += curr;
-    return acc;
+  acc += curr;
+  return acc;
 }, 0);
 console.log("Sum : ", summInput);
 
@@ -127,13 +127,13 @@ const userName = users.filter((userdata) => userdata.age > 40);
 console.log(userName); //will get only those obj.
 
 //Age above 40
-const userName = users
+const userName1 = users
   .filter((userdata) => userdata.age > 40)
   .map((x) => x.firstName + " " + x.lastName);
-console.log(userName); //will get only those obj.
+console.log(userName1); //will get only those obj.
 
 //Age < 30
-const userName = users
+const userName2 = users
   .filter((userdata) => userdata.age < 40)
   .map((x) => x.firstName);
-console.log(userName); //will get only those obj.
+console.log(userName2); //will get only those obj.
