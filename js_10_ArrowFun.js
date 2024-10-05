@@ -19,14 +19,14 @@ const data = () => {
 };
 console.log(data());
 
-// One liners do not require braces/return.
+// One liners do not require braces/return (Implicite Return).
 
 //Method 2.1 - Arrow Function
 const greet = () => "Hello Dosto";
 console.log(greet());
 
-//Just for to return any object require ()
-const objData = () => ({ key: "value" });
+//No need to write return
+const objData = () => ({ key: "value" }); // Use this to return Obj
 console.log(objData());
 
 //Pass Arguments
@@ -41,11 +41,34 @@ const ask_User_x = (name) => "How r u " + name + "?";
 console.log(ask_User_x("Gaurav"));
 
 /////////////////////////////////// this Keyword ////////////////////////////
-//  this ==== > Hold Current context
+/*  In JavaScript, the this keyword always refers to an object.  
+    this ==== > Hold Current context
+*/
 
 // E.g. 1  this in Browser
 console.log("This: ", this); // Output in Browser : global Obj (Window)
 console.log("This: ", this); // Output by Node : Empty {}
+
+// Regualr Fun
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  getThis: function () {
+    return this;
+  },
+};
+
+console.log("this in object method", person.getThis()); // Output : person Obj
+
+//Arrow Fun
+const person1 = {
+  name: "Pedro",
+  surname: "Sanchez",
+  sayName: () => this.name + " " + this.surname,
+};
+
+console.log("This in Arrow fun : ", person1.sayName()); // Undefined
 
 function getData() {
   console.log("");
@@ -62,3 +85,10 @@ function getNewData() {
 }
 
 getNewData();
+
+const getDone = () => {
+  const name = "Gaurav ";
+  console.log("This in Arrow fun : ", this.name); // Output : undefined
+};
+
+getDone();

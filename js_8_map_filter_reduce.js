@@ -26,7 +26,7 @@ const output_arr2 = arr.map(function binCon(x) {
 console.log(output_arr2);
 
 // Method 3
-// This annoymus function don't require name of fun
+// This annoymus function don't require name of fun   (Arrow Fun one liner)
 const data1 = arr.map((ele) => ele.toString(2));
 console.log(data1);
 
