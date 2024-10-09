@@ -18,6 +18,11 @@ console.log(x);
 x = document.scripts;
 console.log(x);
 
+/* Types of Node : 
+1. Text Node  (all text and indentation(space))
+2. Element Node
+3. Comment Node */
+
 // Childern Node
 // It also included TEXT node and comment node
 // Text Node :- Indentation will count as a text code
@@ -31,7 +36,8 @@ console.log("Only Element Child Node: ", document.body.children);
 console.log(document.body.firstElementChild);
 
 // Only Last Child
-// Here we can see that all the element are in form of ARR but this not an ARR we can't perform arr methods on it.
+// Here we can see that all the element are in form of ARR
+// but this not an ARR we can't perform arr methods on it.
 console.log(document.body.lastElementChild);
 
 // Traverse the node (We can only iterate over this)
@@ -58,10 +64,10 @@ firstChild = ulTag.children[0];
 sibli = firstChild.nextElementSibling;
 console.log(sibli);
 
-//Parent ELement 
-parent = ulTag.parentElement  // It give Parent Element Only lese nUll
+//Parent ELement
+parent = ulTag.parentElement; // It give Parent Element Only lese nUll
 console.log("UL Tag Parent Ele", parent);
-parent = ulTag.parentNode     // It give Parent Node (Text, Comment, Ele)
+parent = ulTag.parentNode; // It give Parent Node (Text, Comment, Ele)
 console.log("UL Tag Parent Node Element: ", parent);
 
 // -------------------Table DOM Manipulation-----------------------
