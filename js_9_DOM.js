@@ -19,7 +19,7 @@ x = document.scripts;
 console.log(x);
 
 /* Types of Node : 
-1. Text Node  (all text and indentation(space))
+1. Text Node  (All text and indentation(space))
 2. Element Node
 3. Comment Node */
 
@@ -101,7 +101,7 @@ console.log(
 
 // ---------Get element by ID---------
 // Live Element Selector work at run time always give Collection of ele
-// When we give ID to any tags it become global element in document obj.
+// When we give ID to any element it become global element in document obj.
 console.log((ulID.style = "background-color:green"));
 console.log(ulID);
 
@@ -173,6 +173,43 @@ listDiv.innerHTML = `<table>
                         </tr>
                       </tabel>`; //Is used to Create entire Element
 body.append(listDiv);
+
+//----------------------------Inner HTML----------------------------
+// The innerHTML property returns:
+// The text content of the element, including all spacing and inner HTML tags.
+
+/* HTML Code 
+<p id="myP"> This element has extra spacing and contains <span>a span element</span>.</p>
+*/
+
+function getinnerText() {
+  let text = document.getElementById("myP").innerText;
+  document.getElementById("demo").innerText = text;
+}
+
+function getinnerHTML() {
+  let text = document.getElementById("myP").innerHTML;
+  document.getElementById("demo").innerText = text;
+}
+
+function gettextContent() {
+  let text = document.getElementById("myP").textContent;
+  document.getElementById("demo").innerText = text;
+}
+
+// The Differences Between innerText, innerHTML and textContent
+/* 1. innerText
+  Displays visible text only (ignores hidden elements).
+  Renders CSS styling (e.g., doesn’t include text from display: none).
+  Triggers reflow (can be slower for large DOM updates).
+2. innerHTML
+  Gets or sets the HTML content (can include tags).
+  Parses HTML, so you can add or retrieve nested elements.
+  Risky for user inputs (prone to XSS attacks if not sanitized).
+3. textContent
+  Retrieves or sets all text content, ignoring any HTML tags.
+  Ignores CSS styling, so it includes hidden elements.
+  Faster than innerText since it doesn’t trigger reflow and ignores styling.  */
 
 //----------------------------Event Binding----------------------------
 // -- 1.On one event we can perfrom multiple action E.g. Fun.
