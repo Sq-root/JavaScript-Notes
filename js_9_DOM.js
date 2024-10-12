@@ -29,7 +29,7 @@ console.log(x);
 console.log("All Child Node: ", document.body.childNodes);
 
 // Childern Node
-// Gives list of Only child nodes
+// Gives list of Only child Element nodes
 console.log("Only Element Child Node: ", document.body.children);
 
 // Only First Child
