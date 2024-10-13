@@ -199,11 +199,11 @@ function gettextContent() {
 
 // The Differences Between innerText, innerHTML and textContent
 /* 1. innerText
-  Displays visible text only (ignores hidden elements).
+  Displays visible text only (ignores hidden text).
   Renders CSS styling (e.g., doesn’t include text from display: none).
   Triggers reflow (can be slower for large DOM updates).
 2. innerHTML
-  Gets or sets the HTML content (can include tags).
+  Gets or sets the HTML content with text (can include tags).
   Parses HTML, so you can add or retrieve nested elements.
   Risky for user inputs (prone to XSS attacks if not sanitized).
 3. textContent
