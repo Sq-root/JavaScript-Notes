@@ -1,0 +1,55 @@
+<!-- Problem Statment : -->
+<!-- Create Color Switcher when we click color box ithat color applies to whole doc of website  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Switcher</title>
+    <style>
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .grid {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 6px 7px 8px 2px #cdcdcd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Color Scheme Switcher</h2>
+        <div class="grid">
+            <div class="box" id="blue" style="background-color: rgb(168, 168, 235);"></div>
+            <div class="box" id="green" style="background-color: green;"></div>
+            <div class="box" id="yellow" style="background-color: yellow;"></div>
+            <div class="box" id="gray" style="background-color: gray;"></div>
+        </div>
+        <h2>Try Clicking one of the Box and See the Magic !</h2>
+    </div>
+
+
+    <!-- JS  -->
+    <script src="./8_practice.js"></script>
+</body>
+
+</html>
