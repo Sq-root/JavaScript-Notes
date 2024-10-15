@@ -1,38 +1,42 @@
-//Child elment
-console.log(document.body.children)
-
-//Convert HTML collection into ARR
-let arr = Array.from(document.body.children)
-console.log(arr)
-
-//Travser the Arr
-for (let ele of arr){
-    console.log(ele)
+//---------------------------Event Binding----------------------------
+// -- 1.On one event we can perfrom multiple action E.g. Fun.
+let loginbtn = document.querySelector("#loginbtn");
+function raiseAlert() {
+  alert("Hi....");
 }
 
-console.log(arr.length)
+// Method2: Event Binding with JS (Best Practice)
+loginbtn.onClick = raiseAlert;
 
-console.log(document.body.childNodes)
+// Method3: Event Binding with JS
+console.log(loginbtn);
+loginbtn.addEventListener("click", loggedIn);
 
-console.log("First Child",document.body.firstChild)
-console.log("First Child",document.body.firstElementChild.style="background-color:green")
+function loggedIn() {
+  alert("Successfully Login..");
+}
 
+// ---------------------------- Event Bubbling, Capturing and Propagation in JavaScript-------------------
+/*
+1. Event Bubbling  ( Z --> A)
+ - When an event (like a click) happens on an element, it first triggers on that element and then moves up
+   the DOM tree to its parent elements, all the way up to the root element.
 
-console.log("Last Child",document.body.lastChild)
-console.log("Last Child",document.body.lastElementChild.style="background-color:blue")
+   How Event Bubbling Works
+       - When an event happens on an element, that event is first handled by the element itself.
+       - Then, it "bubbles" up to its parent element, and the parent's event handler (if any) is triggered.
+       - This continues all the way up to the root.  */
 
-// let tableTag = document.body.children[1]
-// console.log(tableTag)
-// console.log(tableTag.caption.textContent)
+document
+  .getElementsByClassName("container")[0]
+  .addEventListener("click", () => {
+    console.log("Outer Container Click");
+  });
 
-// console.log(tableTag.tBodies[0].rows[0].textContent)
+document.getElementsByClassName("box")[0].addEventListener("click", () => {
+  console.log("Inner Box Click");
+});
 
-let ulColor = document.querySelectorAll(".colorName")
-console.log(ulColor)
-ulColor[0].style="background-color:blue"
-
-// let ctitles = document.querySelectorAll(".card-title")
-// ctitles[0].style.color = "blue"
-// ctitles[1].style.color = "red"
-// ctitles[2].style.color = "g"
-// console.log(ctitles)
+document.getElementById("btn2").addEventListener("click", () => {
+  console.log("Inner Btn Click");
+});

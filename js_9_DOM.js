@@ -210,21 +210,3 @@ function gettextContent() {
   Retrieves or sets all text content, ignoring any HTML tags.
   Ignores CSS styling, so it includes hidden elements.
   Faster than innerText since it doesn’t trigger reflow and ignores styling.  */
-
-//----------------------------Event Binding----------------------------
-// -- 1.On one event we can perfrom multiple action E.g. Fun.
-function raiseAlert() {
-  alert("Hi....");
-}
-
-// Method2: Event Binding with JS (Best Practice)
-mainBtn.onClick = raiseAlert;
-
-// Method3: Event Binding with JS
-let loginbtn = document.querySelector("#loginbtn");
-console.log(loginbtn);
-loginbtn.addEventListener("click", loggedIn);
-
-function loggedIn() {
-  alert("Successfully Login..");
-}
