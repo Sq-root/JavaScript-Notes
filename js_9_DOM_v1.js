@@ -21,22 +21,90 @@ function loggedIn() {
 1. Event Bubbling  ( Z --> A)
  - When an event (like a click) happens on an element, it first triggers on that element and then moves up
    the DOM tree to its parent elements, all the way up to the root element.
+-  BUTTON → P → DIV → FORM → BODY → HTML (bubbling phase).
 
    How Event Bubbling Works
        - When an event happens on an element, that event is first handled by the element itself.
        - Then, it "bubbles" up to its parent element, and the parent's event handler (if any) is triggered.
        - This continues all the way up to the root.  */
 
-document
-  .getElementsByClassName("container")[0]
-  .addEventListener("click", () => {
-    console.log("Outer Container Click");
-  });
+// Select the outer and inner divs
+const outerDiv = document.getElementById("outer");
+const innerDiv = document.getElementById("inner");
+const btn = document.getElementById("pribtn");
 
-document.getElementsByClassName("box")[0].addEventListener("click", () => {
-  console.log("Inner Box Click");
-});
+// Add click event listener to the outer div
+// btn.addEventListener("click", function (event) {
+//   console.log("Button Clicked!");
+//   // event.stopPropagation();     // You can stop the event from bubbling up if needed
+// });
 
-document.getElementById("btn2").addEventListener("click", () => {
-  console.log("Inner Btn Click");
-});
+// // Add click event listener to the outer div
+// outerDiv.addEventListener("click", function () {
+//   console.log("Outer Div Clicked!");
+// });
+
+// // Add click event listener to the inner div
+// innerDiv.addEventListener("click", function (event) {
+//   console.log("Inner Div Clicked!");
+// });
+
+// document.body.addEventListener("click", () => {
+//   console.log("Body Clicked!");
+// });
+
+/*
+2. Event Capturing    ( A --> Z)
+ - It is part of the event propagation model where events move from the root element down
+   to the target element before any other event phase.
+
+ - This model has three main phases:
+    Capture phase – the event goes down from the root to the target element.
+    Target phase – the event reaches the target element.
+    Bubble phase – the event bubbles up from the target element back to the root.  
+
+    How Event Capturing Works
+    When you click on the Inner Btn , the event moves from outer → middle → inner -> btn, 
+    following the capturing phase order. Each event handler triggers on its way down 
+    to the target element.
+*/
+
+// Add click event listener to the Btn
+btn.addEventListener(
+  "click",
+  function (event) {
+    console.log("Button Clicked!");
+  },
+  true
+);
+
+// Add click event listener to the outer div
+outerDiv.addEventListener(
+  "click",
+  function () {
+    console.log("Outer Div Clicked!");
+  },
+  true
+);
+
+// Add click event listener to the inner div
+innerDiv.addEventListener(
+  "click",
+  function (event) {
+    console.log("Inner Div Clicked!");
+  },
+  false
+);
+
+document.body.addEventListener(
+  "click",
+  () => {
+    console.log("Body Clicked!");
+  },
+  false
+);
+
+/* Output : 
+Outer DIV - Capturing phase
+Middle DIV - Capturing phase
+Inner DIV - Capturing phase  */
