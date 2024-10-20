@@ -174,3 +174,19 @@ console.log(obj); // Output: { name: "Alice", age: 26, city: "New York" }
 
 // But you cannot reassign the object
 obj = { name: "Bob", age: 30 }; // This will throw an error: TypeError
+
+// -------------------------Implicit Global Declaration------------------------
+// Implicit global variable: When we declare any var wihtout (var, let, const) then it would create as global variable
+//  Even if we declare in fun also it is part of global (window) obj.
+
+// E.g. The variable a becomes part of the global window object
+function example() {
+  a = 10; // Implicit global variable
+}
+example();
+console.log(a); // 10 (global variable, accessible outside the function)
+
+/* Note: 
+1. Unlike variables declared with var, let, or const, variables created this way are not hoisted. 
+    The assignment happens at the line where the code executes.
+*/
