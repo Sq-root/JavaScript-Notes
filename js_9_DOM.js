@@ -102,23 +102,26 @@ console.log(
 );
 
 // ---------Get element by ID---------
-// Live Element Selector work at run time always give Collection of ele
-// When we give ID to any element it become global element in document obj.
-console.log((ulID.style = "background-color:green"));
-console.log(ulID);
+// docment.getElement. --> It is live methods gives HTMLCollectio.
+// Live Element Selector work at run time always give Collection of ele.
+// When we give ID to any element it become global element in document obj (Avoid to get direct Access).
 
 let ul_tag = document.getElementById("ulID");
 ulTag.style.backgroundColor = "red";
 console.log(ul_tag);
 
 // ---------Get element by Class---------
-// When we give Class to any tags it become global element in document obj.
+//It will return A live HTMLCollection.
 list_tag = document.getElementsByClassName("ul_class");
 list_tag.style = "font-style:bold";
 console.log(list_tag);
 
+//Give Multiple ClassName
+// Selects elements that have both given classes
+const allOrangeJuiceByClass = document.getElementsByClassName("orange juice");
+
 // ---------Get element by Tag Name---------
-// When we give Class to any tags it become global element in document obj.
+// return Element by tag name e.g. div, p, li, ul
 allLiTag = document.getElementsByTagName("li");
 console.log("Tag Name: ", allLiTag);
 
