@@ -26,10 +26,12 @@ console.log(x);
 // Childern Node
 // It also included TEXT node and comment node
 // Text Node :- Indentation will count as a text code
+// Type of the Collection is NODELIST
 console.log("All Child Node: ", document.body.childNodes);
 
 // Childern Node
 // Gives list of Only child Element nodes
+// Type of the Collection is HTML COLLECTION
 console.log("Only Element Child Node: ", document.body.children);
 
 // Only First Child
