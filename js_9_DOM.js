@@ -127,16 +127,15 @@ console.log("Tag Name: ", allLiTag);
 
 // ---------Get element by Query Selector---------
 // QUery Selector Means -- u can write CSS selectors
-//Query Selector - It is a Static after this tag if has any id or class it won't take that element
-list_tag = document.querySelectorAll(".ul_tag"); // for multiple tag
-list_tag.style = "font-style:bold";
+//Query Selector - It is a Static after this tag if has any id or class it won't take that element.
+list_tag = document.querySelectorAll(".ul_tag"); // Return List of Element
 console.log("querySelectorAll: ", list_tag);
 
-ul_tag = document.querySelector("#ulID"); // for single tag
+ul_tag = document.querySelector("#ulID"); // Return Single Element (First Come)
 ul_tag.style = "font-style:bold";
 console.log("querySelector:", ul_tag);
 
-//Get user defined attributes and Inbuit
+// ---------------------- Get Attributes Data------------------------
 console.log(ulID.getAttribute("valid")); // get data of the attributes
 
 console.log(ulID.setAttribute("status", "Pending")); // Set data of the attributes
