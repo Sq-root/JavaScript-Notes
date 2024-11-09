@@ -1,35 +1,30 @@
-// function returnFunc() {
-//   const x = () => {
-//     let a = 1;
-//     console.log(a);
-//     const y = () => {
-//       // let a = 2;
-//       console.log(a);
-//       const z = () => {
-//         // let a = 3;
-//         console.log(a);
-//       };
-//       z();
-//     };
-//     y();
-//   };
+// let x = 20;
+// let logger = () => {
+//   console.log(x);
+// };
 
-//   return x;
+// function print(logger) {
+//   console.log("Before print");
+//   setTimeout(logger, 0);
+//   console.log("After print");
 // }
-// let a = returnFunc();
-// a();
 
-function counter() {
-  var count = 0;
+// print(logger); // Outputs: 20
 
-  return function incCount() {
-    count++;
-    console.log(count);
-  };
+// for (let i = 1; i <= 10; i++) {
+//   setTimeout(() => {
+//     console.log(i);
+//   }, 1000 * i); //
+// }
+
+function x() {
+  let x = 20;
+  function y(params) {
+    params = 200;
+    console.log(params);
+  }
+  y(x);
+  console.log(x);
 }
 
-var counter1 = counter();
-console.log(counter1);
-
-counter1();
-counter1();
+x();
