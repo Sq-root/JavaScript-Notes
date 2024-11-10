@@ -17,14 +17,15 @@
 //   }, 1000 * i); //
 // }
 
-function x() {
-  let x = 20;
-  function y(params) {
-    params = 200;
-    console.log(params);
+function setTimer() {
+  for (var i = 1; i <= 10; i++) {
+    function logger(x) {
+      setTimeout(() => {
+        console.log(x);
+      }, 1000 * x); //
+    }
+    logger(i);
   }
-  y(x);
-  console.log(x);
 }
 
-x();
+setTimer();

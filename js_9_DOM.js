@@ -178,13 +178,20 @@ listDiv.innerHTML = `<table>
                       </tabel>`; //Is used to Create entire Element
 body.append(listDiv);
 
-//----------------------------Inner HTML----------------------------
-// The innerHTML property returns:
-// The text content of the element, including all spacing and inner HTML tags.
-
-/* HTML Code 
-<p id="myP"> This element has extra spacing and contains <span>a span element</span>.</p>
-*/
+// The Differences Between innerText, innerHTML and textContent
+/* 1. innerText
+    Displays visible text only (ignores hidden text).
+    Renders CSS styling (e.g., doesn’t include text from display: none).
+    Triggers reflow (can be slower for large DOM updates).
+2. innerHTML
+    Gets or sets the HTML content with text (can include tags).
+    It gives HTML content in same format as written(All space, tags, etc).
+    Parses HTML, so you can add or retrieve nested elements.
+    Risky for user inputs (prone to XSS attacks if not sanitized).
+3. textContent
+    Retrieves or sets all text content, ignoring any HTML tags.
+    Ignores CSS styling, so it includes hidden elements.
+    Faster than innerText since it doesn’t trigger reflow and ignores styling.  */
 
 function getinnerText() {
   let text = document.getElementById("myP").innerText;
@@ -201,16 +208,3 @@ function gettextContent() {
   document.getElementById("demo").innerText = text;
 }
 
-// The Differences Between innerText, innerHTML and textContent
-/* 1. innerText
-  Displays visible text only (ignores hidden text).
-  Renders CSS styling (e.g., doesn’t include text from display: none).
-  Triggers reflow (can be slower for large DOM updates).
-2. innerHTML
-  Gets or sets the HTML content with text (can include tags).
-  Parses HTML, so you can add or retrieve nested elements.
-  Risky for user inputs (prone to XSS attacks if not sanitized).
-3. textContent
-  Retrieves or sets all text content, ignoring any HTML tags.
-  Ignores CSS styling, so it includes hidden elements.
-  Faster than innerText since it doesn’t trigger reflow and ignores styling.  */
