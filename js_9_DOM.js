@@ -135,7 +135,7 @@ ul_tag = document.querySelector("#ulID"); // Return Single Element (First Come)
 ul_tag.style = "font-style:bold";
 console.log("querySelector:", ul_tag);
 
-// ---------------------- Get Attributes Data------------------------
+// ---------------------- Get Attributes Data ------------------------
 console.log(ulID.getAttribute("valid")); // get data of the attributes
 
 console.log(ulID.setAttribute("status", "Pending")); // Set data of the attributes
@@ -162,6 +162,17 @@ newHeading.appendChild(text);
 //--------------------- or ---------------------
 newHeading.textContent = "Namaste World !"; //Append text child element
 
+// 1. append accepts Node objects and DOMStrings , add multiple items .
+// 2. appendChild accepts only Node objects, add single item
+const parent = document.createElement("div");
+const child = document.createElement("p");
+// Appending Node Objects
+parent.append(child); // Works fine
+parent.appendChild(child); // Works fine
+// Appending DOMStrings
+parent.append("Hello world"); // Works fine
+parent.appendChild("Hello world"); // Throws error
+
 //Replace node element
 mainHeading.replaceWith(newHeading);
 
@@ -179,19 +190,22 @@ listDiv.innerHTML = `<table>
 body.append(listDiv);
 
 // The Differences Between innerText, innerHTML and textContent
-/* 1. innerText
+/*
+ 1. innerText
     Displays visible text only (ignores hidden text).
     Renders CSS styling (e.g., doesn’t include text from display: none).
     Triggers reflow (can be slower for large DOM updates).
 2. innerHTML
-    Gets or sets the HTML content with text (can include tags).
     It gives HTML content in same format as written(All space, tags, etc).
     Parses HTML, so you can add or retrieve nested elements.
     Risky for user inputs (prone to XSS attacks if not sanitized).
 3. textContent
-    Retrieves or sets all text content, ignoring any HTML tags.
+    It return all text content with all spaces it ignore CSS styling.
     Ignores CSS styling, so it includes hidden elements.
-    Faster than innerText since it doesn’t trigger reflow and ignores styling.  */
+    Faster than innerText since it doesn’t trigger reflow and ignores styling.
+4. OuterHTML
+     It return InnerHTML + element itself.
+*/
 
 function getinnerText() {
   let text = document.getElementById("myP").innerText;
@@ -207,4 +221,3 @@ function gettextContent() {
   let text = document.getElementById("myP").textContent;
   document.getElementById("demo").innerText = text;
 }
-
