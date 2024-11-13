@@ -120,14 +120,14 @@ When an event occurs, it bubbles up from the target element to its ancestor elem
 */
 
 // Normal way : Attach a  event listener to all elements
-document.querySelectorAll("li").forEach((item) => {
-  item.addEventListener("click", function () {
-    alert("Item clicked: " + item.textContent);
-  });
-});
+// document.querySelectorAll("li").forEach((item) => {
+//   item.addEventListener("click", function () {
+//     alert("Item clicked: " + item.textContent);
+//   });
+// });
 
 //By Event Delegation : Attach a single event listener 
-document.querySelector("myList").addEventListener("click", (e) => {
+document.querySelector("#myList").addEventListener("click", (e) => {
   if (e.target.tagName === "LI") {
     alert("Item clicked: " + e.target.textContent);
   }
