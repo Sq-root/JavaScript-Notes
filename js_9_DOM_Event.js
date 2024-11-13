@@ -126,9 +126,20 @@ When an event occurs, it bubbles up from the target element to its ancestor elem
 //   });
 // });
 
-//By Event Delegation : Attach a single event listener 
+let highLightedEle;
+
+//By Event Delegation : Attach a single event listener
 document.querySelector("#myList").addEventListener("click", (e) => {
   if (e.target.tagName === "LI") {
-    alert("Item clicked: " + e.target.textContent);
+    const ele = e.target;
+    highLightArea(ele);
   }
 });
+
+function highLightArea(ele) {
+  if(highLightedEle){
+    highLightedEle.style.backgroundColor = "";
+  }
+  ele.style.backgroundColor = "yellow";
+  highLightedEle = ele;
+}
