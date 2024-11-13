@@ -108,3 +108,27 @@ document.body.addEventListener(
 Outer DIV - Capturing phase
 Middle DIV - Capturing phase
 Inner DIV - Capturing phase  */
+
+// ---------------------------- Event Delegation in JavaScript-------------------
+/* Event Delegation is that allows you to attach a single event listener to a parent element 
+instead of adding individual listeners to each child element.  
+
+How Event Delegation Works:
+----------------------------------------
+Instead of attaching an event listener to each element you want to track (e.g., every list item or button), you attach a single listener to a common ancestor (parent) element. 
+When an event occurs, it bubbles up from the target element to its ancestor elements.
+*/
+
+// Normal way : Attach a  event listener to all elements
+document.querySelectorAll("li").forEach((item) => {
+  item.addEventListener("click", function () {
+    alert("Item clicked: " + item.textContent);
+  });
+});
+
+//By Event Delegation : Attach a single event listener 
+document.querySelector("myList").addEventListener("click", (e) => {
+  if (e.target.tagName === "LI") {
+    alert("Item clicked: " + e.target.textContent);
+  }
+});
