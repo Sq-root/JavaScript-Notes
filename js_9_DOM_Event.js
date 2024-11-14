@@ -119,7 +119,7 @@ Instead of attaching an event listener to each element you want to track (e.g., 
 When an event occurs, it bubbles up from the target element to its ancestor elements.
 */
 
-// Normal way : Attach a  event listener to all elements
+// Normal Way : Attach a Event listener to all elements
 // document.querySelectorAll("li").forEach((item) => {
 //   item.addEventListener("click", function () {
 //     alert("Item clicked: " + item.textContent);
