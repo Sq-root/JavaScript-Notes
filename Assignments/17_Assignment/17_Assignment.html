@@ -1,0 +1,149 @@
+<!-- Problem Statment: Accordian -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordian</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans MT', 'Trebuchet MS';
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background-color: #000000;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .accordion {
+            width: 65%;
+            background-color: #0000;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .accordion .title {
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2.4rem;
+        }
+
+        .accordion .accordian-container {
+            margin-block: 8px;
+        }
+
+        .accordion .accordian-container .acc-title {
+            position: relative;
+            padding: 20px 20px;
+            font-size: 1.5rem;
+            font-weight: 500;
+            background-color: #2D2D2D;
+            border: 2px solid #000000;
+            cursor: pointer;
+        }
+
+        .accordion .accordian-container .acc-title:hover {
+            transition-timing-function: cubic-bezier(0.32, 0.94, 0.6, 1);
+            background-color: rgb(65, 65, 65);
+        }
+
+        .accordion .accordian-container .acc-title::after {
+            position: absolute;
+            content: '+';
+            font-size: 3rem;
+            right: 15px;
+            top: 3px;
+        }
+
+        .accordion .accordian-container .acc-content {
+            height: 0;
+            overflow: hidden;
+            display: none;
+            padding: 20px;
+            font-size: 1.3rem;
+            line-height: 1.8rem;
+            background-color: #2D2D2D;
+            transition: .5s;
+        }
+
+        .accordion .accordian-container .acc-content.active {
+            height: 100%;
+            display: block;
+        }
+
+        .accordion .accordian-container .acc-title.toggle::after {
+            content: "-";
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="accordion">
+            <h2 class="title">Frequently Asked Questions</h2>
+            <div class="accordian-container">
+                <div class="acc-title">
+                    What is Netflix?
+                </div>
+                <div class="acc-content">
+                    Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime,
+                    documentaries, and more on thousands of internet-connected devices. You can watch as much as you
+                    want, whenever you want, all without a single commercial — all for one low monthly price.
+                </div>
+            </div>
+            <div class="accordian-container">
+                <div class="acc-title">
+                    How much does Netflix cost?
+                </div>
+                <div class="acc-content">
+                    Netflix offers a variety of plans to fit your needs. The cost depends on the plan you choose,
+                    starting from a basic plan with standard definition streaming to a premium plan with Ultra HD
+                    streaming. Visit the Netflix website for the most up-to-date pricing information.
+                </div>
+            </div>
+            <div class="accordian-container">
+                <div class="acc-title">
+                    Where can I watch?
+                </div>
+                <div class="acc-content">
+                    You can watch Netflix anywhere, anytime, on an unlimited number of devices. Log in with your Netflix
+                    account to watch instantly on the web at netflix.com from your personal computer or on any
+                    internet-connected device that offers the Netflix app, such as smart TVs, smartphones, tablets,
+                    streaming media players, and game consoles.
+                </div>
+            </div>
+            <div class="accordian-container">
+                <div class="acc-title">
+                    How do I cancel?
+                </div>
+                <div class="acc-content">
+                    Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your
+                    account online in two clicks. There are no cancellation fees – start or stop your account anytime.
+                </div>
+            </div>
+            <div class="accordian-container">
+                <div class="acc-title">
+                    What can I watch on Netflix?
+                </div>
+                <div class="acc-content">
+                    Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix originals, and more. Watch as much as you want, anytime you want.                </div>
+            </div>
+        </div>
+
+
+        <!-- SCRIPT  -->
+        <script src="./17_Assignment.js"></script>
+</body>
+
+</html>
