@@ -22,6 +22,7 @@ submitBtn.addEventListener("click", () => {
   if (userValue && userValue.length > 0) {
     console.log(userValue);
     todos.push(new Todo(userValue, false));
+    clearTask();
     getListofTask();
   } else {
     alert("Enter the Task");
@@ -29,7 +30,7 @@ submitBtn.addEventListener("click", () => {
 });
 
 function getListofTask() {
-  console.log(todos);
+  // console.log(todos);
   // for (let i = 0; i < todos.length; i++) {
   //   createTodoTemplate(todos[i], i);
   // }
@@ -41,20 +42,19 @@ function getListofTask() {
 }
 
 function createTodoTemplate(todo, index) {
-  todoWrapper.innerHTML = ""; //Clear List
-
   const todoContainer = document.createElement("div");
   todoContainer.className = "todo-list-item";
 
   const todoinfo = document.createElement("div");
   todoinfo.className = "todoinfo";
 
-  const inputBtn = document.createElement("input");
-  inputBtn.className = "todo-checkbtn";
-  inputBtn.setAttribute("type", "checkbox");
-  inputBtn.id = "todobtn" + index;
+  const completeBtn = document.createElement("input");
+  completeBtn.className = "todo-checkbtn";
+  completeBtn.setAttribute("type", "checkbox");
+  completeBtn.id = "todobtn" + index;
 
-  inputBtn.onclick = () => {
+  completeBtn.onclick = () => {
+    clearTask();
     getCompleteTask(index);
   };
 
@@ -74,26 +74,30 @@ function createTodoTemplate(todo, index) {
   deletBtn.className = "todo-deletebtn";
 
   deletBtn.onclick = () => {
+    clearTask();
     getDeleteTask(index);
   };
 
-  todoinfo.append(inputBtn, label, spanEle);
+  todoinfo.append(completeBtn, label, spanEle);
   todoContainer.append(todoinfo);
   todoContainer.append(deletBtn);
   todoWrapper.append(todoContainer);
-  console.log(todoWrapper, index);
+  // console.log(todoWrapper, index);
 }
 
 function getCompleteTask(index) {
   const task = todos[index];
-  task.completed = true;
-  // console.log(todos[index]);
+  task.completed = !task.completed;
   getListofTask();
 }
 
 function getDeleteTask(index) {
   todos.splice(index, 1);
   getListofTask();
+}
+
+function clearTask() {
+  todoWrapper.innerHTML = ""; //Clear List
 }
 
 getListofTask();
