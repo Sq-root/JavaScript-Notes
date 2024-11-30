@@ -7,7 +7,7 @@ if (canvas.getContext) {
   // ----------Draw Rectangle------
   //Filed Rectangle
   canvasctx.fillStyle = "#3333";
-  canvasctx.fillRect(130, 30, 50, 50);  // x,y pt where rec start
+  canvasctx.fillRect(130, 30, 50, 50); // x,y pt where rec start
 
   // //Stroke Rectangle
   // canvasctx.strokeStyle = "red";
@@ -61,6 +61,19 @@ if (canvas.getContext) {
   // canvasctx.bezierCurveTo(60, 100, 15, 0, 140, 70);
   // canvasctx.stroke();
   // canvasctx.closePath();
+
+  //Draw Tringles
+  // canvasctx.beginPath();
+  // canvasctx.moveTo(100, 40);
+  // canvasctx.lineTo(100, 10);
+  // canvasctx.lineTo(50, 100);
+  // canvasctx.fillStyle = "yellow";
+  // canvasctx.fill();
+
+  //Draw Text
+  canvasctx.font = "15px Verdana";
+  canvasctx.fillText("This text is filled", 10, 50, 100);
+  canvasctx.strokeText("This text is stroked", 10, 100, 130);
 } else {
   console.error("Canvas Failed to get canvasctx");
 }

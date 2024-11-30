@@ -1,7 +1,7 @@
 // DOM
 console.log("Documents of Object");
 
-// Print all Document obj
+// Print the entire HTML document  obj
 let x = document;
 console.log(x);
 
@@ -106,6 +106,7 @@ console.log(
 // Live Element Selector work at run time always give Collection of ele.
 // When we give ID to any element it become global element in document obj (Avoid to get direct Access).
 
+//It will return single element
 let ul_tag = document.getElementById("ulID");
 ulTag.style.backgroundColor = "red";
 console.log(ul_tag);
@@ -121,7 +122,7 @@ console.log(list_tag);
 const allOrangeJuiceByClass = document.getElementsByClassName("orange juice");
 
 // ---------Get element by Tag Name---------
-// return Element by tag name e.g. div, p, li, ul
+// return Collection of Elements by tag name e.g. div, p, li, ul
 allLiTag = document.getElementsByTagName("li");
 console.log("Tag Name: ", allLiTag);
 
