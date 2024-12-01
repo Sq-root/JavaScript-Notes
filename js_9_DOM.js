@@ -208,6 +208,11 @@ body.append(listDiv);
      It return InnerHTML + element itself.
 */
 
+// Property	Includes HTML Tags	Includes Hidden Text	Modifiable	Primary Use Case
+// innerHTML	✅ Yes	✅ Yes	✅ Yes	Dynamic HTML Content
+// innerText	❌ No	❌ No	✅ Yes	User-Visible Text
+// textContent	❌ No	✅ Yes	✅ Yes	Raw Text Extraction
+
 function getinnerText() {
   let text = document.getElementById("myP").innerText;
   document.getElementById("demo").innerText = text;
