@@ -36,6 +36,11 @@
 // - When the pizza arrives, the promise is "resolved" with a successful delivery.
 // - If there's an issue, the promise is "rejected" with an error message.
 
+// Promise State:
+// 1. Pending State  -- Initial State
+// 2. Fulfilled -- Operation Completed Successfully.
+// 3. Rejected  -- Operation Failed
+
 // Function that returns a promise
 function fetchData() {
   return new Promise((resolve, reject) => {
