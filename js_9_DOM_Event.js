@@ -53,6 +53,16 @@ const btn = document.getElementById("pribtn");
 //   console.log("Body Clicked!");
 // });
 
+// // HTML Root Element
+// document.documentElement.addEventListener("click", () => {
+//   console.log("DOM fully loaded and parsed");
+// });
+
+// // Window Element
+// window.addEventListener("click", () => {
+//   console.log("Window Clicked!");
+// });
+
 /*
 2. Event Capturing    ( A --> Z)
  - It is part of the event propagation model where events move from the root element down
@@ -70,39 +80,39 @@ const btn = document.getElementById("pribtn");
 */
 
 // Add click event listener to the Btn
-btn.addEventListener(
-  "click",
-  function (event) {
-    console.log("Button Clicked!");
-  },
-  true
-);
+// btn.addEventListener(
+//   "click",
+//   function (event) {
+//     console.log("Button Clicked!");
+//   },
+//   false
+// );
 
-// Add click event listener to the outer div
-outerDiv.addEventListener(
-  "click",
-  function () {
-    console.log("Outer Div Clicked!");
-  },
-  true
-);
+// // Add click event listener to the outer div
+// outerDiv.addEventListener(
+//   "click",
+//   function () {
+//     console.log("Outer Div Clicked!");
+//   },
+//   false
+// );
 
-// Add click event listener to the inner div
-innerDiv.addEventListener(
-  "click",
-  function (event) {
-    console.log("Inner Div Clicked!");
-  },
-  false
-);
+// // Add click event listener to the inner div
+// innerDiv.addEventListener(
+//   "click",
+//   function (event) {
+//     console.log("Inner Div Clicked!");
+//   },
+//   true
+// );
 
-document.body.addEventListener(
-  "click",
-  () => {
-    console.log("Body Clicked!");
-  },
-  false
-);
+// document.body.addEventListener(
+//   "click",
+//   () => {
+//     console.log("Body Clicked!");
+//   },
+//   true
+// );
 
 /* Output : 
 Outer DIV - Capturing phase
@@ -115,7 +125,8 @@ instead of adding individual listeners to each child element.
 
 How Event Delegation Works:
 ----------------------------------------
-Instead of attaching an event listener to each element you want to track (e.g., every list item or button), you attach a single listener to a common ancestor (parent) element. 
+Instead of attaching an event listener to each element you want to track (e.g., every list item or button),
+ you attach a single listener to a common ancestor (parent) element. 
 When an event occurs, it bubbles up from the target element to its ancestor elements.
 */
 
@@ -137,7 +148,7 @@ document.querySelector("#myList").addEventListener("click", (e) => {
 });
 
 function highLightArea(ele) {
-  if(highLightedEle){
+  if (highLightedEle) {
     highLightedEle.style.backgroundColor = "";
   }
   ele.style.backgroundColor = "yellow";

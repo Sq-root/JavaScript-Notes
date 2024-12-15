@@ -44,9 +44,9 @@ console.log("Splice Method: ", list);
 let lsit1 = list.join("_"); // Convert arr to String and add other given data
 console.log(lsit1, typeof lsit1);
 
-console.log(lsit1.pop()); // it will remove last element from og. arr
+console.log(list.pop()); // it will remove last element from og. arr
 
-console.log(lsit1.shift());
+console.log(list.shift());
 
 // Sort the arr
 // - Default It will sort the data as alphabetical order (Means dictornary wise).
@@ -81,3 +81,39 @@ for (let j of list) {
 for (let j in list) {
   console.log(j); // wil return index of the arr
 }
+
+//---------------------------------------------------------------- Object Properties ----------------------------------------------------
+/*1. Object.freeze()
+ What it does:  (No CRUD Operations)
+    1. Can't add new properties.
+    2. Can't delete existing properties.
+    3. Can't modify existing properties.
+*/
+
+const obj = { name: "Alice", age: 25 };
+
+// Freeze the object
+Object.freeze(obj);
+
+// Modifying the property
+obj.name = "Dhoni"; // Won't throw an error
+console.log(obj.name); // Alice
+
+delete obj.name; // Cannot delete properties
+obj.city = "Paris"; // Cannot add new properties
+
+console.log(obj); // Output: { name: "Alice", age: 25 }
+
+// If the object has nested objects, those inner objects are still mutable unless explicitly frozen.
+const obj = {
+  name: "Alice",
+  age: 25,
+  data: {
+    Grade: "A",
+    gender: "Male",
+  },
+};
+
+obj.data.Grade = "B";
+
+console.log(obj); // Output: { name: 'Alice', age: 25, data: { Grade: 'B', gender: 'Male' } }
