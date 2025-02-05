@@ -117,3 +117,25 @@ const obj = {
 obj.data.Grade = "B";
 
 console.log(obj); // Output: { name: 'Alice', age: 25, data: { Grade: 'B', gender: 'Male' } }
+
+/* 2. Object.seal()
+What it does:
+  - no addition or deletion of properties is allowed.
+  - only modifications are allowed.
+
+freeze is completely immutable and seal is partially immutable.
+Like Object.freeze(), Object.seal() is shallow.   objects can still be extended or modified.*/
+
+const obj = { name: "Alice", age: 25 };
+
+// Seal the object
+Object.seal(obj);
+
+// Modify existing properties
+obj.age = 30; // This works because properties are writable
+
+// Attempt to add or remove properties
+delete obj.name; // Does nothing
+obj.city = "Paris"; // Cannot add new properties
+
+console.log(obj); // Output: { name: "Alice", age: 30 }
