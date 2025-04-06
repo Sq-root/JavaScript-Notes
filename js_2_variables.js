@@ -119,6 +119,7 @@ if (ab > 5) {
 
 // ------------------Using const keyword------------------
 // 1. Once the value assing to Var after that we can't change. (Means Redeclaration and update not allowed)
+// 2. It is also a Block Scope
 // const z =10
 // console.log(z);
 // will thrown error won't change
