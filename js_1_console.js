@@ -41,6 +41,101 @@
 //   alert("Enter Correct Password !");
 // }
 
+// console.log("Number", number);
+
+// var number = 2;
+// function Square(n) {
+//   console.log("Resetting Square", res);
+//   var res = n * n;
+//   console.log(res);
+//   return res;
+// }
+// var newNumber = Square(3);
+
+// var x = 100;
+// a();
+// b();
+// console.log(x);
+
+// function a() {
+//   var x = 101;
+//   console.log(x);
+// }
+
+// function b() {
+//   var x = 102;
+//   console.log(x);
+// }
+
+// var number = 2;
+// // console.log(number1);
+// let number1 = 3;
+// const number2 = 6;
+
+// function Square(n) {
+//   var all = n * n;
+//   return all;
+// }
+// var newNumber = Square(3);
+// function testScope() {
+//   if (true) {
+//     let insideIf = "I exist only inside if block";
+//     console.log(insideIf); // ✅
+//   }
+
+//   // console.log(insideIf); // ❌ ReferenceError
+// }
+
+// testScope();
+// function testVarShadowing() {
+//   var value = "Outer scope";
+
+//   if (true) {
+//       var value = "Inner block scope";
+//       console.log("Inside block:", value);  // Outputs: Inner block scope
+//   }
+
+//   console.log("Outside block:", value);      // Also outputs: Inner block scope
+// }
+
+// testVarShadowing();
+
+// function counter() {
+//   let count = 0;
+
+//   const incCount = function () {
+//     count++;
+//     return count;
+//   };
+
+//   const decCount = function () {
+//     count--;
+//     return count;
+//   };
+
+//   return { increment: incCount, decrement: decCount };
+// }
+
+// const counter1 = counter();
+// console.log(counter1.increment());
+// console.log(counter1.increment());
+// console.log(counter1.increment());
+// console.log(counter1.decrement());
+
+// const conu2 = counter();
+// console.log(conu2.increment());
+// console.log(conu2.increment());
+// console.log(conu2.decrement());
+
+// function countClick() {
+//   let count = 0;
+//   document.getElementById("count").addEventListener("click", () => {
+//     console.log("Click Me", ++count);
+//   });
+// }
+
+// countClick();
+
 setTimeout(() => {
   console.log("Helllo");
 }, 3000);
