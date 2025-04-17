@@ -1,3 +1,9 @@
+// # What is a Higher-Order Function?
+// - Takes another function as an argument or Returns a function
+// map, filter, reduce are the Higher Order Func.
+
+
+
 // ---------------------Map -----------------
 // This time of function is used to transform the arr like
 // to apply logic on individual element of arr and resultant it will create new arr.
