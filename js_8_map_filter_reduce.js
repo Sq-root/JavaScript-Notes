@@ -2,8 +2,6 @@
 // - Takes another function as an argument or Returns a function
 // map, filter, reduce are the Higher Order Func.
 
-
-
 // ---------------------Map -----------------
 // This time of function is used to transform the arr like
 // to apply logic on individual element of arr and resultant it will create new arr.
@@ -99,6 +97,13 @@ const summInput = list.reduce(function sum(acc, curr) {
 }, 0);
 console.log("Sum : ", summInput);
 
+// Finding Max Number
+console.log(
+  list.reduce((max, curr) => {
+    return max > curr ? max : curr;
+  }, -134)
+);
+
 // Question
 
 const users = [
@@ -122,11 +127,29 @@ const users = [
     lastName: "kohli",
     age: 26,
   },
+  {
+    firstName: "Rohit",
+    lastName: "Sharma",
+    age: 50,
+  },
 ];
 
 //Get all the users Full name
 // const userName = users.map(userdata => userdata.firstName + " " + userdata.lastName)
 // console.log(userName)
+
+//Make it Group By
+//Output :  {26: 2, 75: 1, 50: 2}
+console.log(
+  users.reduce((userObj, curr) => {
+    if (curr.age in userObj) {
+      userObj[curr.age] = userObj[curr.age] + 1;
+    } else {
+      userObj[curr.age] = 1;
+    }
+    return userObj;
+  }, {})
+);
 
 //Age above 40
 const userName = users.filter((userdata) => userdata.age > 40);
