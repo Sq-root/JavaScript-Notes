@@ -136,6 +136,94 @@
 
 // countClick();
 
-setTimeout(() => {
-  console.log("Helllo");
-}, 3000);
+function transformValue(values, logic) {
+  const output = [];
+  for (let index = 0; index < values.length; index++) {
+    output.push(logic(values[index]));
+  }
+  return output;
+}
+
+const arr = [1, 21, 3, 4, 6, 7, 8];
+const sqNo = (no) => {
+  if (no > 2) {
+    return no;
+  }
+};
+
+console.log(transformValue(arr, sqNo));
+
+const usr = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 30 },
+  { name: "Charlie", age: 35 },
+  { name: "qwe", age: 25 },
+  { name: "Alex", age: 35 },
+];
+
+const nameArr = usr.map((user) => {
+  return user.name;
+});
+
+console.log("s", nameArr);
+
+console.log(
+  usr.reduce((str, curr) => {
+    return (str += curr.name);
+  }, "")
+);
+
+console.log(
+  arr.reduce((max, curr) => {
+    return max > curr ? max : curr;
+  }, -134)
+);
+
+console.log(
+  usr.reduce((userObj, curr) => {
+    if (curr.age in userObj) {
+      userObj[curr.age] = userObj[curr.age] + 1;
+    } else {
+      userObj[curr.age] = 1;
+    }
+    return userObj;
+  }, {})
+);
+
+const userinfo = {
+  name: "Alice", // string
+  age: 25, // number
+  isMember: true, // boolean
+  score: null, // null
+  country: undefined, // undefined
+  id: Symbol("user-id"), // symbol
+  bigCount: 9007199254740991n, // bigint
+};
+
+console.log(userinfo["aa"]);
+
+function print() {
+  console.log(this.userinfo);
+}
+
+print();
+
+function getAnimal(food1, food2, food3) {
+  console.log(
+    `${this.name} is ${this.mealPreference}, and likes to eat ${food1}, ${food2}, and ${food3}`
+  );
+}
+
+const animal1 = {
+  name: "Lion",
+  mealPreference: "carnivorous",
+};
+const animal2 = {
+  name: "Deer",
+  mealPreference: "herbivorous",
+};
+getAnimal.call(animal1, "cheetahs", "crocodiles", "giraffes");
+// Output: 'Lion is carnivorous, and likes to eat cheetahs, crocodiles, and giraffes'
+
+getAnimal.apply(animal2, ["Grasses", "sedges", "leaves"]);
+// Output: 'Deer is herbivorous, and likes to eat Grasses, sedges, and leaves'
