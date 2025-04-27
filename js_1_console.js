@@ -214,16 +214,48 @@ function getAnimal(food1, food2, food3) {
   );
 }
 
-const animal1 = {
-  name: "Lion",
-  mealPreference: "carnivorous",
-};
-const animal2 = {
-  name: "Deer",
-  mealPreference: "herbivorous",
-};
-getAnimal.call(animal1, "cheetahs", "crocodiles", "giraffes");
-// Output: 'Lion is carnivorous, and likes to eat cheetahs, crocodiles, and giraffes'
+function getName() {
+  console.log(`${this.firstName} ${this.lastName}`);
+}
 
-getAnimal.apply(animal2, ["Grasses", "sedges", "leaves"]);
-// Output: 'Deer is herbivorous, and likes to eat Grasses, sedges, and leaves'
+const student1 = {
+  firstName: "Rishav",
+  lastName: "Pandey",
+};
+const myName = getName.bind(student1);
+myName();
+
+function outerThis(e) {
+  console.log(e.target);
+}
+
+const btn = document.getElementById("btn");
+
+const parent = {
+  greet() {
+    return "Hello";
+  },
+};
+
+const child = Object.create(parent);
+console.log(child);
+
+const studetails = {
+  name: "Gaurav",
+};
+
+const eduDetails = {
+  class: "B.E",
+  course: "IT",
+  __proto__: studetails,
+};
+
+const result = {
+  cgpa: 9.4,
+  __proto__: eduDetails,
+  publishResult() {
+    console.log(`Congratulation ${this.name} you got ${this.cgpa}`);
+  },
+};
+
+console.log(result);

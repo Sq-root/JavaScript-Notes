@@ -17,6 +17,16 @@ function triple_value(x) {
   return x * 3;
 }
 
+//BTS Map
+// function transformValue(values, logic) {
+//   const output = [];
+//   for (let index = 0; index < values.length; index++) {
+//     output.push(logic(values[index]));
+//   }
+//   return output;
+// }
+
+
 const output_arr = arr.map(double_value); // it will call the func for every element of arr
 console.log(output_arr);
 
