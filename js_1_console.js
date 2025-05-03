@@ -259,3 +259,26 @@ const result = {
 };
 
 console.log(result);
+
+// Base Class
+class Animal {
+  constructor(name) {
+    this.name = name;
+    console.log(`${this.name} is Animal.`);
+  }
+
+  speak() {
+    console.log(`${this.name} makes a sound.`);
+  }
+}
+
+// Derived Class
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} bark.`);
+  }
+}
+
+const puppy = new Dog("puppy");
+const tommy = new Dog("tommy");
+

@@ -11,6 +11,15 @@
 // This technique allows a function to call another function
 // A callback function can run after another function has finished
 
+// Used for:
+//  Delaying execution until another task completes
+//  Handling asynchronous operations (e.g., API requests, file reading
+
+// Think of ordering pizza:
+//   1.You order pizza (main program continues).
+//   2.Give your phone number (callback).
+//   3.When pizza is ready, you get a call (callback executed).
+
 //Normal FUnction
 // function loadScript(src) {
 // let script = document.createElement("script");
@@ -86,17 +95,20 @@ function getData(id, callbackFun) {
   }, 2000);
 }
 
+// // Cons:
+//   1. Too many nested callbacks become messy and unreadable.
+//   2.  No easy try-catch; errors can go unnoticed.
+
+
 //Note: U can;t pass function direxctly like this. you have to pass as arrow func like below
 getData(123,getData(124));
 
-
 //Creting Callback Pyaamid
-getData(12, (data) => {
-  getData(13, (data) => {
-    getData(14, (data) => {
-      getData(15, (data) => {
-        getData(16, (data) => { })
-      })
-    })
-  })
+doSomething(function(result) {
+  doSomethingElse(result, function(newResult) {
+    doThirdThing(newResult, function(finalResult) {
+      console.log('Got the final result: ' + finalResult);
+    });
+  });
 });
+
