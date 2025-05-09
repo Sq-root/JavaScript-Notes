@@ -258,12 +258,15 @@ const result = {
   },
 };
 
-console.log(result);
+console.log("result: ", result);
 
 // Base Class
 class Animal {
+  animalType = "earth";
+  #name;
   constructor(name) {
-    this.name = name;
+    this.#name = name;
+    this.animalType = "earth";
     console.log(`${this.name} is Animal.`);
   }
 
@@ -282,3 +285,47 @@ class Dog extends Animal {
 const puppy = new Dog("puppy");
 const tommy = new Dog("tommy");
 
+function userAge() {
+  this.age = 34;
+  console.log("Age", 34);
+}
+
+function User(name, age) {
+  this.name = name;
+  this.age = age;
+  userAge();
+}
+
+const user1 = new User("Virat", 25);
+console.log(user1);
+const user2 = new User("Dhoni", 30);
+
+User.prototype.getData = function () {
+  console.log("Data: ", this.name, this.age);
+};
+
+user1.getData();
+user2.getData();
+
+// S.__proto__ = String.__proto__ = Object__proto__ = null;
+
+class Car {
+  constructor(color, model) {
+    this.color = color;
+    this.model = model;
+  }
+
+  drive() {
+    console.log(`Starting the ${this.color} ${this.model}.`);
+  }
+}
+
+const bmwCar = new Car("White", "BMW");
+
+var carname = "BMW";
+
+function getCardata() {
+  console.log("Car Name", this.color);
+}
+
+getCardata()
