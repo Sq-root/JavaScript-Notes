@@ -95,8 +95,8 @@ function getData(id, callbackFun) {
   }, 2000);
 }
 
-// // Cons:
-//   1. Too many nested callbacks become messy and unreadable.
+//  Cons:
+//   1.  This becomes deeply nested, hard to read, and hard to handle errors. This is called callback hell.
 //   2.  No easy try-catch; errors can go unnoticed.
 
 
