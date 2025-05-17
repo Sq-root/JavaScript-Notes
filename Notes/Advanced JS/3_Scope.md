@@ -31,9 +31,11 @@ console.log(b);
 
 ```
 
-![[ref_img/img1.png|500]]
+![Scope Chaining](./ref_img/img1.png "Scope Chaining")
+
 - Scope chaining
-- ![[ref_img/img2.png|300]]
+
+![Scope Chaining Example](./ref_img/img2.png "Scope Chaining Example")
 
 ## Temporal Dead Zone
 - **Temporal Dead Zone (TDZ)** refers to the time between the hoisting of a variable (using `let` or `const`) and its initialization. During this time, the variable cannot be accessed.
@@ -105,8 +107,7 @@ console.log(bb); // ReferenceError: bb is not defined
 	- `let` and `const` are block-scoped — only accessible within `{}` where declared.
 
 - E.g. Here, var `a & c` are only accessible within that block and `b` store store inside global scope.
-	
-- ![[ref_img/img4.png]]
+  ![Block Scope Example](./ref_img/img4.png "Block Scope Example")
 
 2. **Nested Scope (Lexical Scope)** 
 
@@ -129,4 +130,4 @@ console.log(bb); // ReferenceError: bb is not defined
 ![[Pasted image 20250412155227.png]]
 
 2. **Diff Scope**
-![[ref_img/img7.png]]
+![Scope Chaining Example](./ref_img/img7.png "Scope Chaining Example")
