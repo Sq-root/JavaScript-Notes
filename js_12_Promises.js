@@ -37,9 +37,31 @@
 // - If there's an issue, the promise is "rejected" with an error message.
 
 // Promise State:
-// 1. Pending State  -- Initial State
-// 2. Fulfilled -- Operation Completed Successfully.
-// 3. Rejected  -- Operation Failed
+// 1. Pending   → (initial, waiting)
+// 2. Fulfilled → (resolved successfully)
+// 3. Rejected  → (failed with error)
+
+// Basic Sturcture
+// A Promise is created using the new Promise() constructor.
+// It takes a callback function (executor) with two parameters: resolve and reject.
+// The moment you create the promise, the executor runs.
+// Initially, the state is pending.
+// After calling resolve() or reject(), the state changes to fulfilled or rejected.
+
+// const promise = new Promise((resolve, reject) => {
+//   // 3. This is called the "executor function"
+//   // It runs automatically when the promise is created
+//   // You decide when to resolve or reject
+
+//   // async task simulation
+//   resolve("Success");
+//   // OR reject("Error");
+// });
+
+
+//Here , Will pirnt empty object with pending state it not resolved or rejected yet.
+console.log(promise) // 
+
 
 // Function that returns a promise
 function fetchData() {
