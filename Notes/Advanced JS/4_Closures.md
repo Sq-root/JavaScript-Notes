@@ -36,13 +36,13 @@ closureExample(); // Outputs: "Hello"
 
 ```
 
-![Closure Example](./ref_img/img8.png)
+![Closure Example](./ref_img/img8.png "Closure")
 
 #### 2. setTimeout with help of Closure
 
 - The loop executes, and the all `setTimeout` callback is pushed to the event queue. By the time the `setTimeout` runs, the loop has already completed, so `i` is 3 (the final value after the loop).
 - Here expected output it `1,2,3` after interval but due `var` value gets updated after loop ends will get latest value `setTimeout` is referring that.
-- **Solution** : Using `let` instead of `var` ensures that each iteration of the loop gets its own ==separate copy of the variable==. This block-scoping property of `let` means that when the asynchronous function (e.g., `setTimeout`) executes, it captures the value of `i` as it was at the time of that iteration.
+- **Solution** : Using `let` instead of `var` ensures that each iteration of the loop gets its own separate copy of the variable. This block-scoping property of `let` means that when the asynchronous function (e.g., `setTimeout`) executes, it captures the value of `i` as it was at the time of that iteration.
 - `let` inside a `for` loop **creates a new `i` for every iteration** — it's **not just reassigned**, it's **re-declared per iteration block**
 
 ```
