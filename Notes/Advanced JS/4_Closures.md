@@ -36,7 +36,7 @@ closureExample(); // Outputs: "Hello"
 
 ```
 
-![[img8.png]]
+![Closure Example](./ref_img/img8.png)
 
 #### 2. setTimeout with help of Closure
 

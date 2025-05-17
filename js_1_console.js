@@ -328,4 +328,16 @@ function getCardata() {
   console.log("Car Name", this.color);
 }
 
-getCardata()
+getCardata();
+
+function getState() {
+  console.log("He", this);
+
+  function getState1() {
+    console.log("He1", this);
+  }
+
+  getState1();
+}
+
+getState();

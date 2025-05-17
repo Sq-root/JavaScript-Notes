@@ -31,9 +31,9 @@ console.log(b);
 
 ```
 
-![[img1.png|500]]
+![[ref_img/img1.png|500]]
 - Scope chaining
-- ![[img2.png|300]]
+- ![[ref_img/img2.png|300]]
 
 ## Temporal Dead Zone
 - **Temporal Dead Zone (TDZ)** refers to the time between the hoisting of a variable (using `let` or `const`) and its initialization. During this time, the variable cannot be accessed.
@@ -106,7 +106,7 @@ console.log(bb); // ReferenceError: bb is not defined
 
 - E.g. Here, var `a & c` are only accessible within that block and `b` store store inside global scope.
 	
-- ![[img4.png]]
+- ![[ref_img/img4.png]]
 
 2. **Nested Scope (Lexical Scope)** 
 
@@ -129,4 +129,4 @@ console.log(bb); // ReferenceError: bb is not defined
 ![[Pasted image 20250412155227.png]]
 
 2. **Diff Scope**
-![[img7.png]]
+![[ref_img/img7.png]]
