@@ -1,5 +1,5 @@
 // ----------------------Promises--------------------
-// Promise is an action which guarantees a result in future, the result could be the expected one(positive) 
+// Promise is an action which guarantees a result in future, the result could be the expected one(positive)
 // and if anything goes wrong, the result will be something which was not anticipated(negative)
 
 // Why do we Need Promiss:
@@ -8,7 +8,7 @@
 //   2. Make connection to DB.
 //   3. Download data , pics, videos from Server.
 //   this all task takes so handle this all taks we user promises.
-//   4. Avoid Callback Hell Problem 
+//   4. Avoid Callback Hell Problem
 
 // ### Scenario: Ordering Food Online
 // ---------------------------------------------
@@ -58,10 +58,8 @@
 //   // OR reject("Error");
 // });
 
-
 //Here , Will pirnt empty object with pending state it not resolved or rejected yet.
-console.log(promise) // 
-
+console.log(promise); //
 
 // Function that returns a promise
 function fetchData() {
@@ -91,7 +89,7 @@ fetchData()
 
 console.log("Fetching data..."); // This will log first due to the asynchronous nature of the promise
 
-//E.g. Pass data
+//E.g. We can return non-Promise values to pass data down the chain
 let promo2 = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve({ userName: "Gaurav", email: "gaurav@gmail.com" });
@@ -159,7 +157,6 @@ multiplePromo.then((num) => {
   console.log("API Callin");
 });
 
-
 //E.g Promis Chain -- one by one data will come
 function fetchUserDetails(userid) {
   return new Promise((resolve, reject) => {
@@ -183,6 +180,35 @@ fetchUserDetails(1)
   .then((id) => {
     console.log("User Found: ", id);
   });
+
+const userList = ["Alex", "Bob", "Charlie", "David", "Eve"];
+
+// Chain promises sequentially (Handling Async operations sequentially)
+const getUserStatus = getVerfiedUser("Alex");  // Call API to get user status which returns a promise
+
+getUserStatus
+  .then((status) => {
+    console.log(status);
+    return getVerfiedUser("John");
+  })
+  .then((status) => {
+    console.log(status);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
+function getVerfiedUser(userName) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (userList.includes(userName)) {
+        resolve(`User ${userName} is verified.`);
+      } else {
+        reject(`User ${userName} is not verified.`);
+      }
+    }, 2000);
+  });
+}
 
 //E.g Load Script Example
 let link = "https://www.youtube.com/iframe_api";
