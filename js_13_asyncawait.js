@@ -1,5 +1,5 @@
 // ----------------------ASYNC/AWAIT--------------------
-// - ASYNC/AWAIT are used to handle asynchronous operations in JavaScript. They make it easier to work with promises by allowing you 
+// - ASYNC/AWAIT are used to handle asynchronous operations in JavaScript. They make it easier to work with promises by allowing you
 //   to write asynchronous code that looks more like synchronous code, which can be easier to read and understand.
 // - It use to handle PROMISES.
 
@@ -59,11 +59,12 @@ handlePromo();
 
 // 2. ------------BY ASYNC/AWAIT---------------
 // -- AWAIT will wait it won't go to next line of code until promis will resolve.
-// Here the Function won't be there in call stack it will suspended it won't be block main thread the promisse call resolve separately.Once prmisse resolved it excutes futher logic comes to memory stack.
+// Here the Function won't be there in call stack it will suspended it won't be block main thread the promisse call resolve separately.
+// Once prmisse resolved it excutes futher logic comes to memory stack.
 async function apidata() {
   // JS Engine will waiting for promises to be resolved/rejected.
   let res = await promisAPI;
-  // await: The await keyword is used exclusively within async functions. It tells JavaScript to "pause" the execution of the  
+  // await: The await keyword is used exclusively within async functions. It tells JavaScript to "pause" the execution of the
   // function at this point, and wait for the Promises function to complete.
   // THis will not execute until await promise will resolve.
   console.log("Handled Promiess", res);
@@ -110,12 +111,24 @@ getWeatherUpdate().then((value) => {
 async function fetchData() {
   //Here Fetch will return the RESPONSE BODY.
   //Response body which is as ReableStream which needs to convert to JSON.
-  const data = await fetch("https://jsonplaceholder.typicode.com/todos/1"); 
-  // The .json() method of the response object is used to parse the JSON body content. 
+  const data = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  // The .json() method of the response object is used to parse the JSON body content.
   // This method also returns a promise.
-  const result = await data.json(); 
+  const result = await data.json();
   console.log("Response: ", result);
 }
+
+// How fetch() Handles Responses
+//   Only Rejects on Network Failures:
+//   No internet connection
+//   DNS resolution failure
+//   CORS policy violations
+//   Invalid request syntax
+
+// Resolves for All HTTP Responses:
+//   Successful responses (200-299)
+//   Client errors (400-499)
+//  Server errors (500-599)
 
 fetchData();
 
@@ -162,7 +175,6 @@ async function createPost() {
   console.log("Response: ", res);
 }
 
-
 //Try Catch Finally
 // Finally: It will excute the code no mamtter error occur or not .
 //          It will also excute if try bloc return somthing
@@ -177,5 +189,3 @@ const x = () => {
     console.log("No matter What I will execute my code");
   }
 };
-
-
