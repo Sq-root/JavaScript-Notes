@@ -11,6 +11,7 @@
 ### Example 
 #### 1. Global Scope
 - Here , We try to access `x` it will give `not defined error` because `Hoisting` happens only for those variable who declared by `var, let, const`.
+- In Memory `x` is not even stored before declaration
 - For `b` , it is declared inside function due to block scope not possible to access `b` outside the function.
 
 ```
