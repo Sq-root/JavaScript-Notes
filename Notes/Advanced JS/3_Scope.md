@@ -149,6 +149,18 @@ console.log(bb); // ReferenceError: bb is not defined
 
 ![Block Scope Try-If-For Example](./ref_img/img10.png "Block Scope Try-If-For Example")
 
+4. **Function Declaration Inside Block**
+- In modern JavaScript (ES6+), **functions declared inside blocks** are **block-scoped**, similar to `let` and `const`.
+- The `sayHi` function is **only accessible inside that block**.
+
+```JS
+{
+  function sayHi() { console.log("Hi!"); }
+}
+
+sayHi(); // ReferenceError: sayHi is not defined
+```
+
 ## Shadowing
 
 - In that value get override(modify) to new value.
