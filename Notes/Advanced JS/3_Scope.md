@@ -7,18 +7,13 @@
 - **Lexical Memory = Local memory + Lexical Env of parent's All memory**.
 - Lexical means Hierarchy (one inside another).
 
-E.g. let's understand by e.g.
-
+### Example 1 : 
+- A function’s scope chain is determined at the time of `function definition`, not where it's called.
 - `Lexical` meaning that one side another here, function `c` is inside function `a` lexically.
   - Here Function `c` get in FEC it get ref of their parent (lexical) memory means function `a`
     like wise function `a` get memory ref their parent current is GEC.
-
-Case 1:
-
-- Here, in function `c` when line `console.log(b)` first of it will look int their memory if found then access that variable else it goes to their parent memory if not their then here it will go to Global execution panel if not there then will throw error.
-- Here, found inside function `b`.
-
-```
+    
+```js
 function a() {
   var b = 10;
   c();
@@ -30,12 +25,36 @@ function a() {
 
 a();
 console.log(b);
-
 ```
+#### BTS : 
+
+- Here, in function `c` when line `console.log(b)` first of it will look int their memory if found then access that variable else it goes to their parent memory if not their then here it will go to Global execution panel if not there then will throw error.
+- Here, found inside function `b`.
 
 ![Scope Chaining](./ref_img/img1.png "Scope Chaining")
 
-- Scope chaining
+### Example 2 : Function Calling 
+- A function’s scope chain is determined at the time of `function definition`, not where it's called.
+
+```js
+function foo() {
+  var a = 2;       // Local to foo()
+  console.log(a);  // OK
+  foo1();          // Calls another function
+}
+
+function foo1() {
+  console.log(a);  // a is not in this scope
+}
+```
+#### BTS :
+- `foo1()` is declared in **global scope**, so its outer environment is the **global scope**, not `foo()`.
+- It **does not have access** to variables declared in `foo()`.
+- Since `a` is not declared in `foo1()`, JS engine **looks outward** to the global scope.
+- `a` is not declared in global scope. It throws  **ReferenceError: `a` is not defined**
+
+ 
+### Scope chaining
 
 ![Scope Chaining Example](./ref_img/img2.png "Scope Chaining Example")
 
