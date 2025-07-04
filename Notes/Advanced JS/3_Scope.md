@@ -7,53 +7,57 @@
 - **Lexical Memory = Local memory + Lexical Env of parent's All memory**.
 - Lexical means Hierarchy (one inside another).
 
-### Example 1 : 
+### Example 1 :
+
 - A function’s scope chain is determined at the time of `function definition`, not where it's called.
 - `Lexical` meaning that one side another here, function `c` is inside function `a` lexically.
   - Here Function `c` get in FEC it get ref of their parent (lexical) memory means function `a`
     like wise function `a` get memory ref their parent current is GEC.
-    
+
 ```js
 function a() {
   var b = 10;
   c();
 
   function c() {
-  console.log(b)
+    console.log(b);
   }
 }
 
 a();
 console.log(b);
 ```
-#### BTS : 
+
+#### BTS :
 
 - Here, in function `c` when line `console.log(b)` first of it will look int their memory if found then access that variable else it goes to their parent memory if not their then here it will go to Global execution panel if not there then will throw error.
 - Here, found inside function `b`.
 
 ![Scope Chaining](./ref_img/img1.png "Scope Chaining")
 
-### Example 2 : Function Calling 
+### Example 2 : Function Calling
+
 - A function’s scope chain is determined at the time of `function definition`, not where it's called.
 
 ```js
 function foo() {
-  var a = 2;       // Local to foo()
-  console.log(a);  // OK
-  foo1();          // Calls another function
+  var a = 2; // Local to foo()
+  console.log(a); // OK
+  foo1(); // Calls another function
 }
 
 function foo1() {
-  console.log(a);  // a is not in this scope
+  console.log(a); // a is not in this scope
 }
 ```
+
 #### BTS :
+
 - `foo1()` is declared in **global scope**, so its outer environment is the **global scope**, not `foo()`.
 - It **does not have access** to variables declared in `foo()`.
 - Since `a` is not declared in `foo1()`, JS engine **looks outward** to the global scope.
-- `a` is not declared in global scope. It throws  **ReferenceError: `a` is not defined**
+- `a` is not declared in global scope. It throws **ReferenceError: `a` is not defined**
 
- 
 ### Scope chaining
 
 ![Scope Chaining Example](./ref_img/img2.png "Scope Chaining Example")
@@ -150,6 +154,7 @@ console.log(bb); // ReferenceError: bb is not defined
 ![Block Scope Try-If-For Example](./ref_img/img10.png "Block Scope Try-If-For Example")
 
 4. **Function Declaration Inside Block**
+
 - In modern JavaScript (ES6+), **functions declared inside blocks** are **block-scoped**, similar to `let` and `const`.
 - The `sayHi` function is **only accessible inside that block**.
 
@@ -161,19 +166,64 @@ console.log(bb); // ReferenceError: bb is not defined
 sayHi(); // ReferenceError: sayHi is not defined
 ```
 
+5. **Block Scope Syntax Error**
+
+- Here, `var d` is **hoisted to the top of the function or global scope** , the **same scope** where `let d` already exists.
+
+```js
+let d = 1;
+{
+  var d = 2;
+}
+
+//Output
+SyntaxError: Identifier 'd' has already been declared
+```
+
 ## Shadowing
 
-- In that value get override(modify) to new value.
+- if a **local variable** has the same name as a **global variable**, the local one **overrides** (or shadows) the global one **inside that scope**.
 
-![Shadowing](./ref_img/img6.png "Shadowing")
+### Example 1: Override the Value
 
-![Shadowing Scope](./ref_img/img11.png "Shadowing Scope")
+- There are **two variables named `i`**, but the **local one (inside the function)** hides or "shadows" the **global one** while the function runs.
+- The global `i` is still there — it’s just not visible _inside the function_ because the local `i` takes its place.
 
-**\*Examples**:\*
+```js
+var i = 100; // Global i
 
-1. **Override the Value**
+function test() {
+  var i = 50; // Local i (shadows the global one)
+  console.log("Inside function:", i);
+}
 
-   - Variable declare using `var` gets override due to Global **Scope**
+test();
+console.log("Outside function:", i);
+```
 
-2. **Diff Scope**
-   ![Scope Chaining Example](./ref_img/img7.png "Scope Chaining Example")
+```js
+function testVarShadowing() {
+  var value = "Outer scope";
+
+  if (true) {
+    var value = "Inner block scope";
+    console.log("Inside block:", value); // Outputs: Inner block scope
+  }
+
+  console.log("Outside block:", value); // Also outputs: Inner block scope
+}
+
+testVarShadowing();
+```
+
+### Example 2. Diff Scope
+
+- `var i` always **shadows** any outer variable named `i`, because `var` is **function-scoped**.
+
+```js
+function todo() {
+  console.log(i);
+  var i = 23; // Functional Scope i which Overrides
+  i = 13; // Global Scope i
+}
+```
