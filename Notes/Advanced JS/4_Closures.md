@@ -29,7 +29,7 @@ const closureExample = outerFunction(); // This returns the Closure
 closureExample(); // Outputs: "Hello"
 ```
 
-![[./ref_img/img8.png]]
+![Closure Example](./ref_img/img8.png)
 #### 2.  setTimeout with help of Closure
 
 - The loop executes, and the all `setTimeout` callback is pushed to the event queue. By the time the `setTimeout` runs, the loop has already completed, so `i` is 3 (the final value after the loop).
