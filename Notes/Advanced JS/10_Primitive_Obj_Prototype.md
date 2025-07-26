@@ -1,49 +1,4 @@
-## *`Everthing in JS is Drives from Object it means everything in JS is Object.`*
-## 1. Primitive Types (Stored Directly in Stack Memory)
 
-**Primitive:** Like a note on a paper. You can read it, but can’t change what the note means.
-Primitive values in JavaScript include:
-
-- `Number` (e.g., `10`, `3.14`)
-- `String` (e.g., `"hello"`)
-- `Boolean` (`true`, `false`)
-- `null`, `undefined`
-- `Symbol`, `BigInt`
-### **How They Are Stored?**
-
-- Stored **directly** in **stack memory**.
-- Stored by **value**, meaning a new copy is made when assigned to another variable.
-- Not objects, No methods or properties
-- They **do not** have prototypes, but JS can **temporarily wrap** them in object wrappers
-- **Same behavior as C/C++ and Java for primitive types (values are copied directly).**
-
-```
-var a = 10;  
-var b = a; // Copy of 'a' is assigned to 'b'
-
-a = 20; // Changing 'a' does not affect 'b'
-console.log(b); // 10
-
-```
-
-## 2. Objects, Arrays, and Functions (Stored in Heap Memory)
-
-- Non-primitive types (objects, arrays, functions) are stored **by reference** in **heap memory**.
-- **Object:** Like a box with multiple labeled drawers — you can open, modify, or add new things.
-### **How They Are Stored?**
-
-- The actual **object is stored in heap memory**.
-- Stored by **reference**
-- When assigned to another variable, only the **reference is copied, not the actual data**.
-- Have a prototype chain
-
-```
-var obj1 = { name: "Alice" };
-var obj2 = obj1; // Reference to same object
-
-obj1.name = "Bob"; 
-console.log(obj2.name); // "Bob" (both point to same object)
-```
 
 ## What is Boxing (Autoboxing)?
 

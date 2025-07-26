@@ -107,3 +107,58 @@ newNumber: 9
 ```
 
 - Now code completed everything will be clear from call stack .
+
+## 1. Primitive Types (Stored Directly in Stack Memory)
+
+Primitive values in JavaScript include:
+
+- `Number` (e.g., `10`, `3.14`)
+- `String` (e.g., `"hello"`)
+- `Boolean` (`true`, `false`)
+- `null`, `undefined`
+- `Symbol`, `BigInt`
+### **How They Are Stored?**
+
+- Stored **directly** in **stack memory**.
+-  When the value inside a box is a string/number/boolean/symbol/undefined/null, you can’t change the value. You can only create new boxes.
+- **Same behavior as C/C++ and Java for primitive types (values are copied directly).**
+
+```js
+var a = 10;  
+var b = a; // Copy of 'a' is assigned to 'b'
+
+a = 20; // Changing 'a' does not affect 'b'
+console.log(b); // 10
+```
+### What is a Reference in JavaScript?
+- In JavaScript, variables don’t store actual values directly for non-primitive types. Instead, they **reference (point to)** the location in memory where the value is stored.
+#### Example 1
+- `word` points to a box containing the string `"hello"`
+- A **new box** is created with `"world"` ,`word` now points to the new box.
+- The old `"hello"` box is eventually **`cleaned up`** by `JavaScript's garbage collector`.
+
+```js
+let word = "hello";
+
+word = "world";
+```
+
+![Primitive Type](./ref_img/img19.png "Primitive")
+
+## 2. Objects, Arrays, and Functions (Stored in Heap Memory)
+
+Non-primitive types (objects, arrays, functions) are stored **by reference** in **heap memory**.
+### **How They Are Stored?**
+
+- The actual **object is stored in heap memory**.
+- The **variable stores only a reference (memory address)** in stack memory.
+- When assigned to another variable, only the **reference is copied, not the actual data**.
+
+```js
+var obj1 = { name: "Alice" };
+var obj2 = obj1; // Reference to same object
+
+obj1.name = "Bob"; 
+console.log(obj2.name); // "Bob" (both point to same object)
+
+```
